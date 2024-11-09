@@ -25,7 +25,7 @@ if(qv==1&&ct==1){
 q=(q*1+B).toString()
 navigator.clipboard.writeText("You also have Obama Care plans starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and are great for people with major pre-existing conditions. Which market are you leaning towards?")}}
 oncontextmenu=e=>{if(e.target.className=='orangBtn')e.preventDefault()}
-onload=e=>{
+
 t=document.createElement('textarea');t.id='at'
 t.style='position:fixed;left:0;top:0;height:50px'
 document.getElementsByClassName('footerContent')[0].after(t)
@@ -110,7 +110,8 @@ SecAdvAccDeductChanged()
 if(ddlAssociation.value>-1)ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
 continuePrimaryCov()
 continueOtherCov();__doPostBack('calculateButton','')}},2e2)}}},2e2)})}
-eval(d)}
+eval(d)
+
 document.body.onpaste=e=>{
 if(e.target.tagName=="INPUT"&&e.target.id.includes("DOB")){
 setTimeout(function(){
