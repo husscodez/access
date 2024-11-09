@@ -4,7 +4,7 @@
 // ==/UserScript==
 
 
-
+alert("HELLO")
 
 qv=0 //set to 0 for exact Q, set to 1 for private and public Q
 B=125 // add price on top of private
