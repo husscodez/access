@@ -1,4 +1,4 @@
-console.log(2)
+console.log(333)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -14,7 +14,7 @@ t.onpaste=e=>{
     if(txtZipCode.value!=at.value.split('\n')[0]){
       txtZipCode.value=at.value.split('\n')[0]
       zipCodeChanged()
-      setTimeout('__doPostBack(\'txtZipCode\',\'\')',0))
+      setTimeout('__doPostBack(\'txtZipCode\',\'\')',0)
   })
 }
 
