@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Access Code</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; }
+        #container { text-align: center; }
+        #code { margin-top: 10px; padding: 10px; border: 1px solid #ccc; font-size: 1.2em; }
+        button { margin-top: 15px; padding: 10px 20px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Your Unique Access Code</h1>
+        <p>Copy this code and send it to the administrator to get access.</p>
+        <div id="code">Generating...</div>
+        <button onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <script>
+        async function generateFingerprint(){
+            const c=document.createElement('canvas'),x=c.getContext('2d');
+            x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';
+            x.fillRect(125,1,62,20);x.fillStyle='#069';x.fillText('Canv Word !',2,15);
+            x.fillStyle='rgba(102,204,0,0.7)';x.fillText('Canv Word !',4,17);
+            return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(c.toDataURL()+'|'+(c.getContext('webgl')?.getExtension('WEBGL_debug_renderer_info')?.UNMASKED_RENDERER_WEBGL||''))))).map(b=>b.toString(16).padStart(2,'0')).join('');
+        }
+
+        (async function() {
+            const code = await generateFingerprint();
+            document.getElementById("code").textContent = code;
+        })();
+
+        function copyCode() {
+            const codeText = document.getElementById("code").textContent;
+            navigator.clipboard.writeText(codeText).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy code: " + err);
+            });
+        }
+    </script>
+</body>
+</html>
