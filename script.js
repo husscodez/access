@@ -5,10 +5,10 @@
 
 alert("HELLO");
 
-qv=0; // set to 0 for exact Q, set to 1 for private and public Q
-B=125; // add price on top of private
-l0=45; // lower limit
-l1=75; // higher limit
+qv = 0; // set to 0 for exact Q, set to 1 for private and public Q
+B = 125; // add price on top of private
+l0 = 45; // lower limit
+l1 = 75; // higher limit
 
 // DO NOT TOUCH ANYTHING BELOW !!!!!
 {
@@ -58,7 +58,7 @@ l1=75; // higher limit
         });
     });
 
-    // Remainder of original code
+    // Remainder of original code with setInterval checks
     ti = setInterval(function () {
         if (UpdateProgress10.style.display == 'none') {
             clearInterval(ti);
@@ -77,4 +77,14 @@ l1=75; // higher limit
             }
         }
     }, 200);
+
+    document.body.addEventListener('paste', e => {
+        if (e.target.tagName == "INPUT" && e.target.id.includes("DOB")) {
+            setTimeout(() => {
+                if (e.target.value < 100) e.target.value = '01/01/' + (new Date().getYear() + 1900 - e.target.value);
+            });
+        }
+    });
+
+    ddlPrimarySex.onwheel = e => ddlPrimarySex.value = e.deltaY > 0 ? 'F' : 'M';
 }
