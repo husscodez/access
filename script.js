@@ -1,4 +1,4 @@
-console.log(112233)
+console.log(44221)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -42,113 +42,79 @@ qf()
 function p0(){
 if(ddlAppType.value!=25){
 ddlAppType.value=25
-getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')', 0)
-}
+getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')',0)}
 ti=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
-
-//*******
 tii=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(tii)
-document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML
-}
-},200)
-//*******
-
+document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML}},200)
 checkPrimaryDOB()
-
 ContinueHomeToPrimary()
 ddlPremierAdvantageProduct.value=ddlPremierAdvantageProduct.getElementsByTagName('option')[1].value
 ddlPremierAdvantageProduct_SelectedIndexChanged()
 continuePrimaryCov()
-
 if(!ddlAssociation.innerText.includes('Select'))ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
-continueOtherCov(); __doPostBack('calculateButton','')
+continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
-},200)
-}
+
+
+
 
 function p1(){
 if(ddlAppType.value!=17){
 ddlAppType.value=17
-getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')', 0)
-}
-
+getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')',0)}
 ti=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
-
-//*******
 tii=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(tii)
-document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML
-}
-},200)
-//*******
-
+document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML}},200)
 checkPrimaryDOB()
-
 ContinueHomeToPrimary()
 ddlFIProduct.value=ddlFIProduct.getElementsByTagName('option')[1].value
 ddlFIProduct_SelectedIndexChanged()
-
 ddlPCHWProduct.value=ddlPCHWProduct.getElementsByTagName('option')[0].value
 ddlPCHWProduct_SelectedChanged()
 continuePrimaryCov()
 if(ddlAssociation.value>-1){
-ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
+ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value}
+continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
-continueOtherCov(); __doPostBack('calculateButton','')
-}
-},200)
-}
+
+
+
+
 
 function p2(){
 if(ddlAppType.value!=13){
 ddlAppType.value=13
-getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')', 0)
-}
+getSessionStorageByAppTypeID();setTimeout('__doPostBack(\'ddlAppType\',\'\')',0)}
 ti=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
-
-//*******
 tii=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(tii)
-document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML
-}
-},200)
-//*******
-
+document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML}},200)
 checkPrimaryDOB()
-
 ContinueHomeToPrimary()
 ddlSecAdvSickCoIns.value=ddlSecAdvSickCoIns.getElementsByTagName('option')[ddlSecAdvSickCoIns.getElementsByTagName('option').length-1].value
 SecAdvSickCoInsChanged()
-
 ddlSecAdvSickDeduct.value=ddlSecAdvSickDeduct.getElementsByTagName('option')[ddlSecAdvSickDeduct.getElementsByTagName('option').length-1].value
 SecAdvSickDeductibleChanged()
-
 ddlSecAdvSickLifetimeMax.value=ddlSecAdvSickLifetimeMax.getElementsByTagName('option')[1].value
 ddlSecAdvSickPremiumRateGuaranteePeriod.value=ddlSecAdvSickPremiumRateGuaranteePeriod.getElementsByTagName('option')[1].value
-
 ddlSecAdvPPONetwork.value=10100
+SecAdvPPONetworkChanged()
 ddlSecAdvAccDeduct.value=ddlSecAdvAccDeduct.getElementsByTagName('option')[ddlSecAdvAccDeduct.getElementsByTagName('option').length-1].value
 SecAdvAccDeductChanged()
-
-
-if(ddlAssociation.value>-1){
-ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
-}
-
+if(ddlAssociation.value>-1)ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
 continuePrimaryCov()
-continueOtherCov(); __doPostBack('calculateButton','')
-}
-},200)
+continueOtherCov();__doPostBack('calculateButton','')}},2e2)}}},2e2)})
 }
 
 
