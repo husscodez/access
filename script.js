@@ -1,4 +1,4 @@
-console.log(1)
+console.log(2)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -8,9 +8,13 @@ document.getElementsByClassName('footerContent')[0].after(t)
 t.onpaste=e=>{
   setTimeout(function(){
     primaryDOB.value=at.value.split('\n')[1].replace(/\D/g,'')
-      if(primaryDOB.value*1<100)primaryDOB.value='01/01/'+(2025-primaryDOB.value)
-      if(at.value.split('\n').length==3&&(at.value.split('\n')[2]=='M'||at.value.split('\n')[2]=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
-      txtPrimaryW.value=150
+    if(primaryDOB.value*1<100)primaryDOB.value='01/01/'+(2025-primaryDOB.value)
+    if(at.value.split('\n').length==3&&(at.value.split('\n')[2]=='M'||at.value.split('\n')[2]=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
+    txtPrimaryW.value=150
+    if(txtZipCode.value!=at.value.split('\n')[0]){
+      txtZipCode.value=at.value.split('\n')[0]
+      zipCodeChanged()
+      setTimeout('__doPostBack(\'txtZipCode\',\'\')',0))
   })
 }
 
