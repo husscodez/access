@@ -1,4 +1,4 @@
-console.log(123)
+console.log(112233)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -149,8 +149,6 @@ continuePrimaryCov()
 continueOtherCov(); __doPostBack('calculateButton','')
 }
 },200)
-}
-
 }
 
 
