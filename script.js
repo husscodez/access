@@ -1,4 +1,4 @@
-console.log(555)
+console.log(123)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
