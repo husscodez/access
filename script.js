@@ -1,4 +1,4 @@
-console.log(444)
+console.log(555)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -14,7 +14,6 @@ t.onpaste=e=>{
     if(txtZipCode.value!=at.value.split('\n')[0]){
       txtZipCode.value=at.value.split('\n')[0]
       zipCodeChanged();setTimeout('__doPostBack(\'txtZipCode\',\'\')',0)
-			
 			ti=setInterval(function(){
 				if(UpdateProgress10.style.display=='none'){
 					clearInterval(ti)
