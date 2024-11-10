@@ -1,4 +1,4 @@
-console.log(44221)
+console.log(1111111)
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -114,7 +114,7 @@ ddlSecAdvAccDeduct.value=ddlSecAdvAccDeduct.getElementsByTagName('option')[ddlSe
 SecAdvAccDeductChanged()
 if(ddlAssociation.value>-1)ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
 continuePrimaryCov()
-continueOtherCov();__doPostBack('calculateButton','')}},2e2)}}},2e2)})
+continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
 
 
