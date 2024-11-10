@@ -25,7 +25,7 @@ if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
 if(ddlAppType.innerText.includes("Fixed Indemnity"))p0()
 else if(ddlAppType.innerText.includes("Premier Choice"))p1()
-else if(ddlAppType.innerText.includes("Secure Advantage"))p2()
+else if(ddlAppType.innerText.includes("SecureAdvantage"))p2()
 }
 },200)
 })
