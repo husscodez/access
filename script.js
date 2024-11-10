@@ -16,6 +16,7 @@ t.onpaste=e=>{
       zipCodeChanged()
       setTimeout('__doPostBack(\'txtZipCode\',\'\')',0)
     }
+	})
 }
 
 console.log(1010101)
