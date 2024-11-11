@@ -16,7 +16,7 @@ for(i=0;i<x.length;i++){
 if(x[i].innerText.includes('hly P'))q=x[i+1].innerText.split(' ')[1]
 }
 if(qv==0){
-navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+q+"/month,\n\nIs that something you would be interested in?")
+navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+Math.round(q)+"/month,\n\nIs that something you would be interested in?")
 }
 if(qv==1&&ct==0){
 navigator.clipboard.writeText("Happy to help. There are private market options starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and go up from there! You just have to be relatively healthy to qualify.")
