@@ -1,4 +1,4 @@
-console.log(1299)
+console.log(4433)
 
 
 
@@ -75,9 +75,9 @@ else if(ddlAppType.innerText.includes("SecureAdvantage"))p2()
 })
 }
 
-at.onpaste=e=>{
+// at.onpaste=e=>{ // *EXT
 qf()
-}
+//}
 
 
 
