@@ -1,7 +1,9 @@
-console.log(9122)
+console.log(22677)
 
 
-
+onload=e=>{
+alert("IT WORKED")
+}
 
 // quote button start
 
