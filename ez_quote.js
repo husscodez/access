@@ -1,4 +1,4 @@
-console.log(2222);
+console.log(090909);
 
 // Set up global variables and constants
 qv=0;
@@ -8,9 +8,9 @@ l1=75;
 
 // Attach cq to window to make it globally accessible
 function cq(ct){
-  x=document.getElementsByClassName('qoute_total')
+  x=document.getElementsByClassName('qoute_total');
   for(i=0;i<x.length;i++){
-    if(x[i].innerText.includes('hly P'))q=x[i+1].innerText.split(' ')[1];
+    if(x[i].innerText.includes('hly P')) q=x[i+1].innerText.split(' ')[1];
   }
   if(qv==0){
     navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+Math.round(q)+"/month,\n\nIs that something you would be interested in?");
@@ -27,7 +27,7 @@ window.cq=cq; // Make cq globally accessible
 
 // Context menu prevention on the quote button
 oncontextmenu=e=>{
-  if(e.target.className=='orangBtn')e.preventDefault();
+  if(e.target.className=='orangBtn') e.preventDefault();
 };
 
 // Create and configure the textarea
@@ -41,14 +41,14 @@ at.onmouseenter=e=>{
 
 ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M';
 
-// Define qf function and attach to window for global access
-function qf(){
+// Define qf function to accept data as an argument and attach to window
+function qf(data){
   setTimeout(function(){
-    primaryDOB.value=data.message.dob;
-    txtPrimaryW.value=150;
-    txtZipCode.value=data.message.zip;
-    ti=setInterval(function(){
-      if(UpdateProgress10.style.display=='none'){
+    primaryDOB.value = data.dob;
+    txtPrimaryW.value = 150;
+    txtZipCode.value = data.zip;
+    ti = setInterval(function(){
+      if(UpdateProgress10.style.display == 'none'){
         clearInterval(ti);
         if(ddlAppType.innerText.includes("Fixed Indemnity")) p0();
         else if(ddlAppType.innerText.includes("Premier Choice")) p1();
@@ -57,45 +57,49 @@ function qf(){
     }, 200);
   });
 }
-window.qf=qf; // Make qf globally accessible
+window.qf = qf; // Make qf globally accessible
 
-// Call qf to execute it on load
-qf();
+// Call qf with message data when available
+chrome.runtime.onMessage.addListener((data) => {
+  if (data && data.dob && data.zip) {
+    qf(data); // Pass the data object to qf
+  }
+});
 
 // Define plan functions p0, p1, p2 and attach buttons with cq functionality
 function p0(){
-  if(ddlAppType.value!=25){
-    ddlAppType.value=25;
+  if(ddlAppType.value != 25){
+    ddlAppType.value = 25;
     getSessionStorageByAppTypeID();
-    setTimeout('__doPostBack(\'ddlAppType\',\'\')',0);
+    setTimeout('__doPostBack(\'ddlAppType\',\'\')', 0);
   }
   ti=setInterval(function(){
-    if(UpdateProgress10.style.display=='none'){
+    if(UpdateProgress10.style.display == 'none'){
       clearInterval(ti);
-      tii=setInterval(function(){
-        if(UpdateProgress10.style.display=='none'){
+      tii = setInterval(function(){
+        if(UpdateProgress10.style.display == 'none'){
           clearInterval(tii);
-          document.getElementsByClassName('buttonWrapper')[3].innerHTML='<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">'+document.getElementsByClassName('buttonWrapper')[3].innerHTML;
+          document.getElementsByClassName('buttonWrapper')[3].innerHTML = '<input type="button" value=Quote class=orangBtn onclick=cq(0) oncontextmenu="cq(1)">' + document.getElementsByClassName('buttonWrapper')[3].innerHTML;
         }
-      },200);
+      }, 200);
       checkPrimaryDOB();
       ContinueHomeToPrimary();
-      ddlPremierAdvantageProduct.value=ddlPremierAdvantageProduct.getElementsByTagName('option')[1].value;
+      ddlPremierAdvantageProduct.value = ddlPremierAdvantageProduct.getElementsByTagName('option')[1].value;
       ddlPremierAdvantageProduct_SelectedIndexChanged();
       continuePrimaryCov();
-      if(!ddlAssociation.innerText.includes('Select')) ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value;
+      if(!ddlAssociation.innerText.includes('Select')) ddlAssociation.value = ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value;
       continueOtherCov();
-      __doPostBack('calculateButton','');
+      __doPostBack('calculateButton', '');
     }
   }, 200);
 }
 
-// Repeat similar adjustments for p1 and p2
+// Similar adjustments for p1 and p2
 function p1(){
-  // Similar logic as p0
+  // Logic similar to p0
 }
 function p2(){
-  // Similar logic as p0
+  // Logic similar to p0
 }
 
 console.log(1010101);
