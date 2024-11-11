@@ -1,9 +1,8 @@
-console.log(22677)
+console.log(888)
 
 
 onload=e=>{
-alert("IT WORKED")
-}
+
 
 // quote button start
 
@@ -166,5 +165,6 @@ continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 
 
 
-
 console.log(1010101)
+
+}
