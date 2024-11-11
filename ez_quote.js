@@ -1,4 +1,4 @@
-console.log(4488)
+console.log(1299)
 
 
 
@@ -56,13 +56,14 @@ ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 // chose plan function
 function qf(){
 setTimeout(function(){
-primaryDOB.value=at.value.split('\n')[1].replace(/\D/g,'')
-if(at.value.split('\n').length==3&&(at.value.split('\n')[2]=='M'||at.value.split('\n')[2]=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
+primaryDOB.value=data.message.dob  // *EXT //at.value.split('\n')[1].replace(/\D/g,'')
+//if(at.value.split('\n').length==3&&(at.value.split('\n')[2]=='M'||at.value.split('\n')[2]=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
 txtPrimaryW.value=150
-if(txtZipCode.value!=at.value.split('\n')[0]){
+txtZipCode.value=data.message.zip // *EXT
+/*if(txtZipCode.value!=at.value.split('\n')[0]){
 txtZipCode.value=at.value.split('\n')[0]
 zipCodeChanged();setTimeout('__doPostBack(\'txtZipCode\',\'\')', 0)
-}
+}*/
 ti=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
