@@ -1,4 +1,44 @@
-console.log(212121)
+console.log(333)
+
+
+
+
+// quote button start
+
+qv=0 //set to 0 for exact Q, set to 1 for private and public Q
+B=125 // add price on top of private
+l0=45 // lower limit
+l1=75 // higher limit
+
+function cq(ct){
+x=document.getElementsByClassName('qoute_total')
+for(i=0;i<x.length;i++){
+if(x[i].innerText.includes('hly P'))q=x[i+1].innerText.split(' ')[1]
+}
+if(qv==0){
+navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+q+"/month,\n\nIs that something you would be interested in?")
+}
+if(qv==1&&ct==0){
+navigator.clipboard.writeText("Happy to help. There are private market options starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and go up from there! You just have to be relatively healthy to qualify.")
+}
+if(qv==1&&ct==1){
+q=(q*1+B).toString()
+navigator.clipboard.writeText("You also have Obama Care plans starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and are great for people with major pre-existing conditions. Which market are you leaning towards?")
+}
+}
+oncontextmenu=e=>{
+if(e.target.className=='orangBtn')e.preventDefault()
+}
+
+// quote button end
+
+
+
+
+
+
+
+
 
 // create text area
 t=document.createElement('textarea');t.id='at'
@@ -35,36 +75,6 @@ else if(ddlAppType.innerText.includes("SecureAdvantage"))p2()
 at.onpaste=e=>{
 qf()
 }
-
-
-// quote button start
-
-qv=0 //set to 0 for exact Q, set to 1 for private and public Q
-B=125 // add price on top of private
-l0=45 // lower limit
-l1=75 // higher limit
-
-function cq(ct){
-x=document.getElementsByClassName('qoute_total')
-for(i=0;i<x.length;i++){
-if(x[i].innerText.includes('hly P'))q=x[i+1].innerText.split(' ')[1]
-}
-if(qv==0){
-navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+q+"/month,\n\nIs that something you would be interested in?")
-}
-if(qv==1&&ct==0){
-navigator.clipboard.writeText("Happy to help. There are private market options starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and go up from there! You just have to be relatively healthy to qualify.")
-}
-if(qv==1&&ct==1){
-q=(q*1+B).toString()
-navigator.clipboard.writeText("You also have Obama Care plans starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and are great for people with major pre-existing conditions. Which market are you leaning towards?")
-}
-}
-oncontextmenu=e=>{
-if(e.target.className=='orangBtn')e.preventDefault()
-}
-
-// quote button end
 
 
 
