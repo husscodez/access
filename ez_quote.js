@@ -1,4 +1,4 @@
-console.log(9999)
+console.log(4488)
 
 
 
@@ -26,6 +26,8 @@ q=(q*1+B).toString()
 navigator.clipboard.writeText("You also have Obama Care plans starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and are great for people with major pre-existing conditions. Which market are you leaning towards?")
 }
 }
+window.cq=cq
+
 oncontextmenu=e=>{
 if(e.target.className=='orangBtn')e.preventDefault()
 }
