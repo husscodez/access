@@ -1,6 +1,6 @@
 // https://vanillasoft.net/web/default.asp (MAIN AND IFRAMES)
 
-console.log(333)
+console.log(1212)
 if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
 bodyIframe.contentDocument.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
 
