@@ -1,4 +1,4 @@
-console.log(1212)
+console.log("EZ loaded")
 
 
 onload=e=>{
@@ -147,6 +147,6 @@ continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 
 
 
-console.log(1010101)
+console.log("EZ end")
 
 }
