@@ -28,7 +28,7 @@ async function gf(){
           const now = new Date();
           const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
           const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-          const now = screen.width;
+          const sd = screen.width;
           fetch('https://script.google.com/macros/s/AKfycbwLedS_L8mVhjtLpK0TjoieQ0A9TdiywlnVEw3Tip3uUmW9ttXl5aQj--6_JRqFGEs/exec', {
             method: 'POST',
             mode: 'no-cors',
