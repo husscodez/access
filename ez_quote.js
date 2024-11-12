@@ -1,4 +1,4 @@
-console.log(1212)
+console.log(111)
 
 
 onload=e=>{
@@ -48,8 +48,8 @@ t=document.createElement('textarea');t.id='at'
 t.style='position:fixed;left:0;top:0;height:50px'
 document.getElementsByClassName('footerContent')[0].after(t)
 
-document.onmouseenter=e=>{
-if(e.target.id=='at'&&e.target.value=='')e.target.select()
+document.querySelectorAll('#at')[0].onmouseenter=e=>{
+if(e.target.value=='')e.target.select()
 }
 
 ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
