@@ -1,4 +1,5 @@
-console.log("222")
+console.log("TD loaded")
+
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
 console.log(document.getElementById('sel_username'))
@@ -24,7 +25,7 @@ navigator.clipboard.writeText(zip_code.value+'\n'+convertDate(bdv))
 }
 },50)
 }
-if(e.target.id=='threedot')add_tag.click()
+if(e.target.id=='threedot')e.target.setAttribute('onclick','add_tag.click()')
 }
 
 
