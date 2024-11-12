@@ -1,5 +1,6 @@
 console.log("TESTING")
 async function gf(){
+    console.log("TESTING 222")
     const c=document.createElement('canvas'),x=c.getContext('2d');
     x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';
     x.fillRect(125,1,62,20);x.fillStyle='#069';x.fillText('Canv Word !',2,15);
