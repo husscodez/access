@@ -1,7 +1,8 @@
-console.log("TD loaded")
+console.log("TD loaded !")
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
 sel_username.onclick=e=>{
+  console.log("CLICKED")
 c=document.createElement('button')
 c.className='btn btn-info'
 c.id='copy'
