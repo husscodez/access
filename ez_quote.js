@@ -1,4 +1,4 @@
-console.log(111)
+th.round(c)onsole.log(312)
 
 
 onload=e=>{
@@ -17,7 +17,7 @@ for(i=0;i<x.length;i++){
 if(x[i].innerText.includes('hly P'))q=x[i+1].innerText.split(' ')[1]
 }
 if(qv==0){
-navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+q+"/month,\n\nIs that something you would be interested in?")
+navigator.clipboard.writeText("Alright I found full health coverage PPO plans, with low to $0 deduct/copays, that are starting at $"+Math.round(q)+"/month,\n\nIs that something you would be interested in?")
 }
 if(qv==1&&ct==0){
 navigator.clipboard.writeText("Happy to help. There are private market options starting in the "+(q.substr(1)<l0?'low':(q.substr(1)<l1?'mid':'high'))+" $"+q[0]+"00's/mo and go up from there! You just have to be relatively healthy to qualify.")
@@ -32,13 +32,7 @@ window.cq=cq
 oncontextmenu=e=>{
 if(e.target.className=='orangBtn')e.preventDefault()
 }
-
 // quote button end
-
-
-
-
-
 
 
 
@@ -46,15 +40,11 @@ if(e.target.className=='orangBtn')e.preventDefault()
 // create text area
 t=document.createElement('textarea');t.id='at'
 t.style='position:fixed;left:0;top:0;height:50px'
+t.setAttribute('onmouseenter','this.select()')
 document.getElementsByClassName('footerContent')[0].after(t)
-
-document.querySelectorAll('#at')[0].onmouseenter=e=>{
-if(e.target.value=='')e.target.select()
-}
 
 ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 
-// chose plan function
 function qf(){
 setTimeout(function(){
 primaryDOB.value=at.value.split('\n')[1].replace(/\D/g,'')
@@ -80,9 +70,6 @@ qf()
 }
 
 
-
-
-
 function p0(){
 if(ddlAppType.value!=25){
 ddlAppType.value=25
@@ -102,9 +89,6 @@ continuePrimaryCov()
 if(!ddlAssociation.innerText.includes('Select'))ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value
 continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
-
-
-
 
 
 function p1(){
@@ -129,9 +113,6 @@ if(ddlAssociation.value>-1){
 ddlAssociation.value=ddlAssociation.getElementsByTagName('option')[ddlAssociation.getElementsByTagName('option').length-1].value}
 continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
-
-
-
 
 
 function p2(){
@@ -161,7 +142,6 @@ if(ddlAssociation.value>-1)ddlAssociation.value=ddlAssociation.getElementsByTagN
 continuePrimaryCov()
 continueOtherCov();__doPostBack('calculateButton','')}},2e2)
 }
-
 
 
 
