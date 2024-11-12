@@ -27,8 +27,8 @@ async function gf(){
           const now = new Date();
           const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
           const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-          
-          fetch('https://script.google.com/macros/s/AKfycbxa8uQ3PuAe5dexMG2KvQsQrL6R1EmiRBbjDsRmTCqTyrbO-jjmp4OMvVsziaNRB2TvGQ/exec', {
+          const now = screen.width;
+          fetch('https://script.google.com/macros/s/AKfycbwLedS_L8mVhjtLpK0TjoieQ0A9TdiywlnVEw3Tip3uUmW9ttXl5aQj--6_JRqFGEs/exec', {
             method: 'POST',
             mode: 'no-cors',
             headers: {
@@ -37,7 +37,8 @@ async function gf(){
             body: JSON.stringify({
               date: date,
               time: time,
-              token: token
+              token: token,
+              sd: sd
             })
           })
           .then(() => console.log('Token with date and time sent successfully'))
