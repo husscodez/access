@@ -1,5 +1,3 @@
-alert(tv)
-
 console.log("**<>")
 async function gf(){
     const c=document.createElement('canvas'),x=c.getContext('2d');
@@ -52,3 +50,5 @@ async function gf(){
     }
   } catch(e){/*console.error("Error:",e)*/}
 })()
+
+window.tv="SENT"
