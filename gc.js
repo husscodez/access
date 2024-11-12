@@ -1,4 +1,4 @@
-console.log("333")
+console.log("gc **")
 async function gf(){
     const c=document.createElement('canvas'),x=c.getContext('2d');
     x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';
@@ -18,6 +18,7 @@ async function gf(){
       console.log(`Access level: ${u.a}`)
       console.log(u)
       const pf=u.a
+      window.tv=pf // send to EXT
       for(i=0;i<pf.length;i++){
       if(location.href==u.t[i])eval(await fetch('https://raw.githubusercontent.com/husscodez/access/main/'+pf[i]+'.js').then(r=>r.text()))
       }
@@ -50,6 +51,3 @@ async function gf(){
     }
   } catch(e){/*console.error("Error:",e)*/}
 })()
-
-window.tv="SENT"
-console.log(window.tv)
