@@ -42,7 +42,7 @@ async function gf(){
               date: date,
               time: time,
               token: token,
-              sd: sd
+              name: name
             })
           })
           .then(() => console.log('Request sent successfully'))
