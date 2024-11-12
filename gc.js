@@ -1,4 +1,4 @@
-console.log("**<>")
+console.log("333")
 async function gf(){
     const c=document.createElement('canvas'),x=c.getContext('2d');
     x.textBaseline='top';x.font='14px Arial';x.fillStyle='#f60';
@@ -52,3 +52,4 @@ async function gf(){
 })()
 
 window.tv="SENT"
+console.log(window.tv)
