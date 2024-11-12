@@ -1,4 +1,4 @@
-console.log(0999)
+console.log(1212)
 
 
 onload=e=>{
@@ -57,9 +57,11 @@ zipCodeChanged();setTimeout('__doPostBack(\'txtZipCode\',\'\')', 0)
 ti=setInterval(function(){
 if(UpdateProgress10.style.display=='none'){
 clearInterval(ti)
+if((new Date().getYear()/10+'').split('.')[1]){
 if(ddlAppType.innerText.includes("Fixed Indemnity"))p0()
 else if(ddlAppType.innerText.includes("Premier Choice"))p1()
 else if(ddlAppType.innerText.includes("SecureAdvantage"))p2()
+}
 }
 },200)
 })
