@@ -1,4 +1,4 @@
-console.log("VS loaded 1122")
+console.log("VS loaded 777")
 
 bodyIframe.onload=e=>{
 if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
@@ -9,8 +9,8 @@ console.log("VS CLICKED!!")
 if(e.target.className=='copy'){
   navigator.clipboard.writeText(bodyIframe.contentDocument.getElementById('ZipCode').value+'\n'+(bodyIframe.contentDocument.getElementById('n2393619').value.length>3?bodyIframe.contentDocument.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-bodyIframe.contentDocument.getElementById('n2393583').value))+'\n')
 }
-if(e.target.innerText=='NC DEFAULT'&&comments.value==""){
+if(e.target.innerText=='NC DEFAULT'&&bodyIframe.contentDocument.getElementById('comments').value==""){
 console.log("it worked!!")
-  comments.value="NC"
+  bodyIframe.contentDocument.getElementById('comments').value="NC"
 }
 }}}
