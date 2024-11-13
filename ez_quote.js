@@ -1,7 +1,8 @@
-console.log("EZ loaded 1233")
+console.log("EZ loaded")
 
 
 onload=e=>{
+convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
 
 // quote button start
@@ -47,8 +48,11 @@ ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 
 function qf(){
 setTimeout(function(){
-primaryDOB.value=at.value.split('\n')[1].replace(/\D/g,'')
-if(at.value.split('\n').length==3&&(at.value.split('\n')[2]=='M'||at.value.split('\n')[2]=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
+bdv=convertDate(at.value.split('\n')[1].replace(/\D/g,''))
+if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
+else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
+primaryDOB.value=bdv
+if(at.value.split('\n').length==3&&(at.value.split('\n')[2].toUpperCase()=='M'||at.value.split('\n')[2].toUpperCase()=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
 txtPrimaryW.value=150
 if(txtZipCode.value!=at.value.split('\n')[0]){
 txtZipCode.value=at.value.split('\n')[0]
