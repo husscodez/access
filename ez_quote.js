@@ -1,4 +1,4 @@
-console.log("EZ loaded")
+console.log("EZ loaded 1233")
 
 
 onload=e=>{
@@ -70,6 +70,13 @@ else if(ddlAppType.innerText.includes("SecureAdvantage"))p2()
 at.onpaste=e=>{
 qf()
 }
+atvh=''
+setInterval(function(){
+if(at.value!=atvh){
+  qf()
+  atvh=at.value
+}
+},200)
 
 
 function p0(){
