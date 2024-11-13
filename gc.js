@@ -1,4 +1,4 @@
-console.log("GC **")
+console.log("GC loaded")
 
 async function gf(){
     const c=document.createElement('canvas'),x=c.getContext('2d');
