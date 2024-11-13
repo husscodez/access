@@ -19,8 +19,8 @@ if(document.getElementsByClassName('btn-light')[0]!=undefined){
 dobv=document.getElementsByName('birthdate')[0]
 if(dobv.value.split('-')[0].length==4)document.getElementsByName('birthdate')[0].value=dobv.value.split('-')[1]+'-'+dobv.value.split('-')[2]+'-'+dobv.value.split('-')[0]
 clearInterval(abi)
+//document.getElementsByClassName('btn-light')[0].before(q)
 document.getElementsByClassName('btn-light')[0].before(c)
-document.getElementsByClassName('btn-light')[0].before(q)
 c.onclick=e=>{
 bdv=document.getElementsByName('birthdate')[0].value
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
