@@ -42,7 +42,7 @@ if(e.target.className=='orangBtn')e.preventDefault()
 t=document.createElement('textarea');t.id='at'
 th=document.createElement('textarea');th.id='ath'
 t.style='position:fixed;left:0;top:0;width:100px;height:50px'
-th.style='position:fixed;left:0;top:50px;width:100px;height:50px'
+th.style='position:fixed;left:0;top:50px;width:100px;height:50px;display:none'
 t.setAttribute('onmouseenter','this.select()')
 th.setAttribute('onmouseenter','this.select()')
 document.getElementsByClassName('footerContent')[0].after(t)
