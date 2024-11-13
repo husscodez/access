@@ -40,9 +40,13 @@ if(e.target.className=='orangBtn')e.preventDefault()
 
 // create text area
 t=document.createElement('textarea');t.id='at'
-t.style='position:fixed;left:0;top:0;height:50px'
+th=document.createElement('textarea');th.id='ath'
+t.style='position:fixed;left:0;top:0;width:100px;height:50px'
+th.style='position:fixed;left:0;top:50px;width:100px;height:50px'
 t.setAttribute('onmouseenter','this.select()')
+th.setAttribute('onmouseenter','this.select()')
 document.getElementsByClassName('footerContent')[0].after(t)
+document.getElementsByClassName('footerContent')[0].after(th)
 
 ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 
@@ -76,9 +80,10 @@ qf()
 }
 atvh=''
 setInterval(function(){
-if(at.value!=atvh){
+if(ath.value!=atvh){
+  at.value=ath.value
   qf()
-  atvh=at.value
+  atvh=ath.value
 }
 },200)
 
