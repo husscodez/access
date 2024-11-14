@@ -52,7 +52,7 @@ ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 
 function qf(){
 setTimeout(function(){
-  if(at.value.split('\n'[0]==''||at.value.split('\n'[1]=='')){
+  if(at.value.split('\n'[0]==''||at.value.split('\n')[1]=='')){
     alert("Missing some info...")
     return false;
   }
