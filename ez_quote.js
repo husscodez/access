@@ -55,6 +55,13 @@ setTimeout(function(){
   if(at.value.split('\n'[0]==''||at.value.split('\n')[1]=='')){
     //alert("Missing some info...")
     alert(at.value+'\n\n[0]: '+(at.value.split('\n'[0]=='')+'\n\n[1]: '+(at.value.split('\n')[1]==''))+'\n\n'+ath.value)
+    console.log("VAL: "+at.value)
+    console.log("0: "+at.value.split('\n')[0])
+    console.log("1: "+at.value.split('\n')[1])
+    console.log("split: "+at.value.split('\n'))
+    console.log("length: "+at.value.split('\n').length)
+    
+    
     //return false;
   }
 bdv=convertDate(at.value.split('\n')[1].replace(/\D/g,''))
