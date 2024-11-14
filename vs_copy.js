@@ -1,4 +1,4 @@
-console.log("VS loaded")
+console.log("VS loaded !")
 
 bodyIframe.onload=e=>{
 if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
@@ -10,5 +10,12 @@ if(e.target.className=='copy'){
 }
 if(bodyIframe.contentDocument.getElementById('comments').value==""&&(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact')){
   bodyIframe.contentDocument.getElementById('comments').value="NC"
+  setTimeout(function(){
+    notifyCloseButtonFunction()
+    notification.hide()
+    setTimeout(function(){
+      e.target.click()
+    },bodyIframe.contentDocument.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
+  },200)
 }
 }}}
