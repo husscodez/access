@@ -54,7 +54,7 @@ function qf(){
 setTimeout(function(){
   if(at.value.split('\n'[0]==''||at.value.split('\n')[1]=='')){
     //alert("Missing some info...")
-    alert(at.value+'\n\n\n'+ath.value)
+    alert(at.value+'\n\n[0]: '+(at.value.split('\n'[0]=='')+'\n\n[1]: '+(at.value.split('\n')[1]==''))+'\n\n'+ath.value)
     //return false;
   }
 bdv=convertDate(at.value.split('\n')[1].replace(/\D/g,''))
