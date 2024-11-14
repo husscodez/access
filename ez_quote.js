@@ -2,7 +2,7 @@ console.log("EZ loaded")
 
 
 onload=e=>{
-  console.log(localStorage.EXT_KEY)
+  //console.log(localStorage.EXT_KEY) // log rand acs key
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
 
