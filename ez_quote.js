@@ -52,17 +52,9 @@ ddlPrimarySex.onwheel=e=>ddlPrimarySex.value=e.deltaY>0?'F':'M'
 
 function qf(){
 setTimeout(function(){
-  if(at.value.split('\n'[0]==''||at.value.split('\n')[1]=='')){
-    //alert("Missing some info...")
-    alert(at.value+'\n\n[0]: '+(at.value.split('\n'[0]=='')+'\n\n[1]: '+(at.value.split('\n')[1]==''))+'\n\n'+ath.value)
-    console.log("VAL: "+at.value)
-    console.log("0: "+at.value.split('\n')[0])
-    console.log("1: "+at.value.split('\n')[1])
-    console.log("split: "+at.value.split('\n'))
-    console.log("length: "+at.value.split('\n').length)
-    
-    
-    //return false;
+  if(at.value.split('\n')[0]==''||at.value.split('\n')[1]=='')){
+    alert("Missing some info...")
+    return false;
   }
 bdv=convertDate(at.value.split('\n')[1].replace(/\D/g,''))
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
