@@ -12,7 +12,7 @@ async function gf(){
 (async function(){
   try{
     const f=await gf()
-    console.log("Fetching token...")
+    //console.log("Fetching token...")
     const d=await fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp="+new Date().getTime()).then(r=>r.json())
     const u=d.u.find(u=>u.c===f)
     if(u){
