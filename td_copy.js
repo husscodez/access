@@ -30,7 +30,7 @@ navigator.clipboard.writeText(zip_code.value+'\n'+convertDate(bdv))
 }
 },50)
 }
-if(e.target.id=='threedot')e.target.setAttribute('onclick','add_tag.click()')
+if(e.target.id=='threedot') e.target.click()
 }
 
 
