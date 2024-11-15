@@ -24,6 +24,7 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
     bodyIframe.contentDocument.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
     setTimeout(function(){
       e.target.click()
+      if(bodyIframe.contentDocument.getElementsByClassName('notifyButtonWrapper').length)bodyIframe.contentDocument.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
     },bodyIframe.contentDocument.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
   },200)
 }
