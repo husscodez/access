@@ -3,8 +3,7 @@ console.log("EZ loaded")
 
 onload=e=>{
   //console.log(localStorage.EXT_KEY) // log rand acs key
-convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
-
+const formatDOB=dob=>dob.length===2?`01/01/${new Date().getFullYear()-parseInt(dob)}`:dob.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(_,m,d,y)=>`${m.padStart(2,'0')}/${d.padStart(2,'0')}/${y.length===2?(parseInt(y)>24?'19'+y:'20'+y):y}`)
 
 // quote button start
 
@@ -57,7 +56,7 @@ setTimeout(function(){
     alert("Missing some info...")
     return false;
   }
-bdv=convertDate(at.value.split('\n')[1].replace(/\D/g,''))
+bdv=formatDOB(at.value.split('\n')[1].replace(/\D/g,''))
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
 else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
 primaryDOB.value=bdv
