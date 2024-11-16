@@ -1,5 +1,4 @@
-
-console.log("GC TESTING *** loaded")
+//console.log("GC TESTING *** loaded")
 
 async function gf(){
     /*const c=document.createElement('canvas'),x=c.getContext('2d');
@@ -9,8 +8,8 @@ async function gf(){
     return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(c.toDataURL()+'|'+(c.getContext('webgl')?.getExtension('WEBGL_debug_renderer_info')?.UNMASKED_RENDERER_WEBGL||''))))).map(b=>b.toString(16).padStart(2,'0')).join('');
   */
     
-    console.log("GF called in Testing, token: ")
-    console.log(localStorage.EXT_KEY)
+    //console.log("GF called in Testing, token: ")
+    //console.log(localStorage.EXT_KEY)
     return localStorage.EXT_KEY
 }
 
