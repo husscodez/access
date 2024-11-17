@@ -21,7 +21,8 @@ if(dobv.value.split('-')[0].length==4)document.getElementsByName('birthdate')[0]
 clearInterval(abi)
 document.getElementsByClassName('btn-light')[0].before(q)
 document.getElementsByClassName('btn-light')[0].before(c)
-document.getElementsByClassName('btn-light')[0].parentElement.innerHTML+='<img src="https://seeklogo.com/images/I/information-desk-symbol-logo-871156055D-seeklogo.com.png" style="position:absolute;left:0;bottom:0;width:20px;height:20px;filter:invert(1);cursor:pointer" title="Quote button:&#013;Left click -> Quote Male&#013;Right click -> Quote Female" onclick="alert(\'Quote button:\nLeft click -> Quote Male\nRight click -> Quote Female\')">'
+document.getElementsByClassName('btn-light')[0].parentElement.innerHTML+='<img id="info_btn" src="https://seeklogo.com/images/I/information-desk-symbol-logo-871156055D-seeklogo.com.png" style="position:absolute;left:0;bottom:0;width:20px;height:20px;filter:invert(1);cursor:pointer" title="Quote button:&#013;Left click -> Quote Male&#013;Right click -> Quote Female">'
+info_btn.onclick=e=>alert('Quote button:\nLeft click -> Quote Male\nRight click -> Quote Female')
 c.onclick=e=>{
 bdv=document.getElementsByName('birthdate')[0].value
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
