@@ -2,8 +2,6 @@ console.log("TD loaded")
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
-console.log(document.getElementById('sel_username'))
-
 onclick=e=>{
 if(e.target.id=='sel_username'){
 c=document.createElement('button')
@@ -32,7 +30,7 @@ navigator.clipboard.writeText(zip_code.value+'\n'+convertDate(bdv))
 }
 },50)
 }
-if(e.target.id=='threedot') e.target.click()
+if(e.target.id=='threedot') add_tag.click()
 }
 
 
