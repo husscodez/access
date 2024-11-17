@@ -14,13 +14,18 @@ document.body.onclick=e=>{
 if(e.target.className=='copy'){
   navigator.clipboard.writeText(bodyIframe.contentDocument.getElementById('ZipCode').value+'\n'+(bodyIframe.contentDocument.getElementById('n2393619').value.length>3?bodyIframe.contentDocument.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-bodyIframe.contentDocument.getElementById('n2393583').value))+'\n')
 }
-if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
+
+if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.innerText.includes('Retry ')||e.target.innerText=='OutDefault'){
   if(bodyIframe.contentDocument.getElementById('comments').value==""){
-    bodyIframe.contentDocument.getElementById('comments').value="NC"
+    if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
+      bodyIframe.contentDocument.getElementById('comments').value="NC"
+    } else if(e.target.innerText.includes('Retry ')){
+      bodyIframe.contentDocument.getElementById('comments').value=e.target.innerText
+    } else{
+      bodyIframe.contentDocument.getElementById('comments').value="OUT"
+    }
   }
   setTimeout(function(){
-    //notifyCloseButtonFunction()
-    //notification.hide()
     bodyIframe.contentDocument.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
     setTimeout(function(){
       e.target.click()
