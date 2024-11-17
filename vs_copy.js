@@ -5,14 +5,11 @@ bodyIframe.contentDocument.getElementById('clientName').insertAdjacentHTML('afte
 }
 
 bodyIframe.onload=e=>{
-  console.log("bodyIframe loaded **")
 if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
-  console.log("add btn attempt 1 **")
   add_copy_btn()
   if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
     setTimeout(function(){
-      console.log("add btn attempt 2 ***")
-      add_copy_btn()
+      if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){add_copy_btn()}
     },4e3)
   }
 document.body.onclick=e=>{
