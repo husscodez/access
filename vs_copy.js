@@ -35,6 +35,8 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
     },bodyIframe.contentDocument.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
   },200)
 }}}
+
+  if(e.target.id=='searchTerm')e.target.select()
 } // on load end
 
 
@@ -59,9 +61,6 @@ document.body.onmousedown=e=>{
       }
     },500)
   }
-
-
-  if(e.target.id=='searchTerm')e.target.select()
 }
 // 24 hr btn ^^^
 
