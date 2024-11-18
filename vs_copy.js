@@ -59,6 +59,9 @@ document.body.onmousedown=e=>{
       }
     },500)
   }
+
+
+  if(e.target.id=='searchTerm')e.target.select()
 }
 // 24 hr btn ^^^
 
