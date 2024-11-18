@@ -64,14 +64,15 @@ document.body.onmousedown=e=>{
 
 
 // search numb format >>>
-document.body.onpaste=e=>{
+bodyIframe.contentDocument.getElementById("searchTerm").onpaste=e=>{
+    console.log("paste ****")
 setTimeout(function(){
-if(e.target.id=='searchTerm'){
+    console.log("pasted into input")
 if(e.target.value==e.target.value.replace(/[a-zA-Z]/g)){
 e.target.value=e.target.value.replace(/\D/g,'')
 if(e.target.length==11&&e.target.value[0]==1)e.target.value=e.target.value.slice(1,11)
 }
-}
+
 })
 }
 // search numb format ^^^
