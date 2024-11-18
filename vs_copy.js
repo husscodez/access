@@ -43,16 +43,13 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
 // 24 hr btn >>>
 let name_hist=""
 document.body.onmousedown=e=>{
-  console.log("Mouse down **")
   if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
-    console.log("NC DEF **")
     name_hist=(bodyIframe.contentDocument.getElementById('FirstName').value+bodyIframe.contentDocument.getElementById('LastName').value).toLocaleUpperCase()
     name_hist_int=setInterval(function(){
       if((bodyIframe.contentDocument.getElementById('FirstName').value+bodyIframe.contentDocument.getElementById('LastName').value).toLocaleUpperCase()!=name_hist){
         clearInterval(name_hist_int)
         setTimeout(function(){
           if(!bodyIframe.contentDocument.getElementById('clientPanelPhoneFetch').innerText.includes('1 (')){
-            console.log("AUTO CLICK BTN **")
             bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
             bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
             bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
@@ -60,6 +57,13 @@ document.body.onmousedown=e=>{
         },1e3)
       }
     },500)
+  }
+  if(bodyIframe.contentDocument.getElementById('tcpaShowNumbers')){
+    setTimeout(function(){
+      bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
+      bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
+      bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
+    },100)
   }
 }
 // 24 hr btn ^^^
