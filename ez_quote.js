@@ -59,6 +59,7 @@ setTimeout(function(){
   bdv=(at.value.split('\n')[1])
   if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
   else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
+  if(bdv.length==2)bdv='01/01/'+(new Date().getFullYear())
   bdv=formatDOB(bdv)
 primaryDOB.value=bdv
 if(at.value.split('\n').length==3&&(at.value.split('\n')[2].toUpperCase()=='M'||at.value.split('\n')[2].toUpperCase()=='F'))ddlPrimarySex.value=at.value.split('\n')[2]
