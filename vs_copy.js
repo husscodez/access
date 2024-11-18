@@ -59,7 +59,7 @@ document.body.onmousedown=e=>{
       }
     },500)
   }
-  if(bodyIframe.contentDocument.getElementById('tcpaShowNumbers')){
+  if(e.target.id=='tcpaShowNumbers'){
     setTimeout(function(){
       console.log("24 clicked manually ***")
       bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
