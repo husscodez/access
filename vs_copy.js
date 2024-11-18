@@ -64,22 +64,17 @@ document.body.onmousedown=e=>{
 
 
 // search numb format >>>
-bodyIframe.contentDocument.addEventListener("paste", e => {
-    if (e.target && e.target.id === "searchTerm") {
-        console.log("paste ****");
-        console.log(e.target);
-
-        setTimeout(() => {
-            console.log("pasted into input");
-            if (e.target.value === e.target.value.replace(/[a-zA-Z]/g, "")) {
-                console.log("no letters");
-                e.target.value = e.target.value.replace(/\D/g, "");
-                if (e.target.value.length === 11 && e.target.value[0] == 1) {
-                    e.target.value = e.target.value.slice(1, 11);
+bodyIframe.contentDocument.addEventListener("paste",e=>{
+    if(e.target&&e.target.id=="searchTerm"){
+        setTimeout(()=>{
+            if(e.target.value==e.target.value.replace(/[a-zA-Z]/g,"")){
+                e.target.value=e.target.value.replace(/\D/g,"")
+                if(e.target.value.length==11&&e.target.value[0]==1){
+                    e.target.value=e.target.value.slice(1,11)
                 }
             }
-        }, 10); // Adding a small delay for paste content to register
+        },10)
     }
-});
+})
 // search numb format ^^^
 
