@@ -50,6 +50,7 @@ document.body.onmousedown=e=>{
         clearInterval(name_hist_int)
         setTimeout(function(){
           if(!bodyIframe.contentDocument.getElementById('clientPanelPhoneFetch').innerText.includes('1 (')){
+            console.log("24 auto clicked ***")
             bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
             bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
             bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
@@ -60,6 +61,7 @@ document.body.onmousedown=e=>{
   }
   if(bodyIframe.contentDocument.getElementById('tcpaShowNumbers')){
     setTimeout(function(){
+      console.log("24 clicked manually ***")
       bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
       bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
       bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
