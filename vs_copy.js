@@ -47,7 +47,7 @@ document.body.onmousedown=e=>{
         clearInterval(name_hist_int)
         setTimeout(function(){
           name_hist=(bodyIframe.contentDocument.getElementById('FirstName').value+bodyIframe.contentDocument.getElementById('LastName').value).toLocaleUpperCase()
-          if(bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton').length){
+          if(!bodyIframe.contentDocument.getElementById('clientPanelPhoneFetch').innerText.includes('1 (')){
             bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
             bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
             bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
