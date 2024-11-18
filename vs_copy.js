@@ -1,4 +1,4 @@
-console.log("VS loaded!")
+console.log("VS loaded")
 
 function add_copy_btn(){
 bodyIframe.contentDocument.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
@@ -39,7 +39,7 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
 
 
 let name_hist=""
-document.onmousedown=e=>{
+document.body.onmousedown=e=>{
   console.log("Mouse down **")
   if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
     console.log("NC ***")
