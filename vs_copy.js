@@ -18,9 +18,7 @@ document.body.onclick=e=>{
     //console.log("INPUT clicked ***")
     e.target.select()
   }*/
-  console.log(e.target)
-  console.log(e.target.id)
-  e.target.select()
+  if(e.target.id=='searchTerm')e.target.select()
   
   
   
