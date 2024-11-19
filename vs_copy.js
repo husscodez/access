@@ -13,18 +13,11 @@ if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
     },4e3)
   }
 document.body.onclick=e=>{
-  /*//console.log("clicked ***") // NOT WORKING - SELECT VAL ON CLICK
-  if(e.target.id=='searchTerm'){
-    //console.log("INPUT clicked ***")
-    e.target.select()
-  }*/
   if(e.target.id=='searchTerm')e.target.select()
   
-  
-  
-if(e.target.className=='copy'){
-  navigator.clipboard.writeText(bodyIframe.contentDocument.getElementById('ZipCode').value+'\n'+(bodyIframe.contentDocument.getElementById('n2393619').value.length>3?bodyIframe.contentDocument.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-bodyIframe.contentDocument.getElementById('n2393583').value))+'\n')
-}
+  if(e.target.className=='copy'){ // COPY INFO JUST IN CASE
+    navigator.clipboard.writeText(bodyIframe.contentDocument.getElementById('ZipCode').value+'\n'+(bodyIframe.contentDocument.getElementById('n2393619').value.length>3?bodyIframe.contentDocument.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-bodyIframe.contentDocument.getElementById('n2393583').value))+'\n')
+  }
 
 if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.innerText.includes('Retry ')||e.target.innerText=='OutDefault'){
   if(bodyIframe.contentDocument.getElementById('comments').value==""){
