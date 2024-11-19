@@ -13,9 +13,9 @@ if(!bodyIframe.contentDocument.getElementsByClassName('copy').length){
     },4e3)
   }
 document.body.onclick=e=>{
-  console.log("clicked ***")
+  //console.log("clicked ***") // NOT WORKING - SELECT VAL ON CLICK
   if(e.target.id=='searchTerm'){
-    console.log("INPUT clicked ***")
+    //console.log("INPUT clicked ***")
     e.target.select()
   }
   
