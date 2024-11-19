@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Access Code</title>
 <script>
-function sendToken(token) {
+function sendToken(token,inp) {
 const now = new Date();
 const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-const inp = "Payment Done";
 fetch('https://script.google.com/macros/s/AKfycbyV7R_W6i_dUeWGxpRjMkapr5JqJaa2uVYfJKiYIoynNHiV4ANZzrPTv2XQ2W90EL-p-A/exec', {
 method: 'POST',
 mode: 'no-cors',
@@ -25,7 +24,7 @@ name: inp
 })
 .then(() => console.log('Request sent successfully'),close())
 .catch(error => console.error('Error:', error));
-} sendToken(localStorage.EXT_KEY)
+} sendToken(localStorage.EXT_KEY,"Payment done - document.referrer))
 </script>
 </head>
 <body>
