@@ -71,7 +71,9 @@ document.body.onmousedown=e=>{
 
 // search numb format >>>
 bodyIframe.contentDocument.addEventListener("paste",e=>{
+  console.log("Pasted ***")
     if(e.target&&e.target.id=="searchTerm"){
+      console.log("Pasted on INPUT ***")
         setTimeout(()=>{
             if(e.target.value==e.target.value.replace(/[a-zA-Z]/g,"")){
                 e.target.value=e.target.value.replace(/\D/g,"")
