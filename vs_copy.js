@@ -38,6 +38,23 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
   },400)
 }}}
 
+
+// search numb format >>>
+bodyIframe.contentDocument.addEventListener("paste",e=>{
+    if(e.target&&e.target.id=="searchTerm"){
+        setTimeout(()=>{
+            if(e.target.value==e.target.value.replace(/[a-zA-Z]/g,"")){
+                e.target.value=e.target.value.replace(/\D/g,"")
+                if(e.target.value.length==11&&e.target.value[0]==1){
+                    e.target.value=e.target.value.slice(1,11)
+                }
+            }
+        },20)
+    }
+})
+// search numb format ^^^
+
+
 } // on load end
 
 
@@ -69,19 +86,4 @@ document.body.onmousedown=e=>{
 }
 // 24 hr btn ^^^
 
-
-// search numb format >>>
-bodyIframe.contentDocument.addEventListener("paste",e=>{
-    if(e.target&&e.target.id=="searchTerm"){
-        setTimeout(()=>{
-            if(e.target.value==e.target.value.replace(/[a-zA-Z]/g,"")){
-                e.target.value=e.target.value.replace(/\D/g,"")
-                if(e.target.value.length==11&&e.target.value[0]==1){
-                    e.target.value=e.target.value.slice(1,11)
-                }
-            }
-        },20)
-    }
-})
-// search numb format ^^^
 
