@@ -23,7 +23,7 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
   if(bodyIframe.contentDocument.getElementById('comments').value==""){
     if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
       bodyIframe.contentDocument.getElementById('comments').value="NC"
-    } else if(e.target.innerText.includes('Retry ')){
+    } else if(e.target.innerText.includes('Retry ')&&e.parentElement.id=="quickResultCodes"){
       bodyIframe.contentDocument.getElementById('comments').value=e.target.innerText
     } else{
       bodyIframe.contentDocument.getElementById('comments').value="OUT"
