@@ -87,3 +87,10 @@ document.body.onmousedown=e=>{
 // 24 hr btn ^^^
 
 
+
+// ***** CSS ***** >>>
+
+// navbar blue grad bg
+document.getElementById('mainnav').contentDocument.getElementsByClassName('navbar')[0].setAttribute('style',"background: linear-gradient(45deg,#000,#007acc,#000);")
+
+// ***** CSS ***** ^^^
