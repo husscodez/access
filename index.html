@@ -35,47 +35,11 @@
   </div>
 
   <script>
-	
-	
-	
-	
-	
-	async function testInsertPayment(paymentData) {
-console.log("************* GOT IT !!!!")
-console.log(paymentData)
-console.log("************* GOT IT !!")
-  const response = await fetch('https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0',
-    },
-    body: JSON.stringify({
-      payment_id: paymentData.payment_id,
-      amount: paymentData.amount,
-      currency: paymentData.currency,
-      status: paymentData.status,
-    }),
-  });
-
-  if (!response.ok) {
-    const error = await response.text();
-    console.error('Error inserting payment:', error);
-  } else {
-    console.log('Payment successfully added to Supabase');
-  }
-}	
-	
-	
-	
-	
-	
-	
     // Supabase API details
     const SUPABASE_URL = 'https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9zRSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0';
 
-    // Stripe Secret Key (temporary for testing; secure it in production)
+    // Stripe Secret Key (Replace with your backend or secure setup)
     const STRIPE_SECRET_KEY = 'sk_test_51QMB1eIYZz8WJmCZ4T3KmFk8w1fCdwR4AwaQnlJWEh01XhPfecC8JKzt22mr9ZlnHXjQ9hrB5w9GU2aBY2bDuD9H00pbwAVmHI';
 
     // Retrieve session ID from URL
@@ -107,13 +71,23 @@ console.log("************* GOT IT !!")
               status: session.payment_status,
             };
 
-            console.log('Payment Data to Supabase:', paymentData);
-
             // Send data to Supabase
-            console.log("** FETCHING DB ***** !!!!")
-						////////////////
-						testInsertPayment(paymentData)
-						////////////////
+            fetch(`${SUPABASE_URL}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                apikey: SUPABASE_KEY,
+              },
+              body: JSON.stringify(paymentData),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  console.error('Failed to update Supabase:', response.status, response.statusText);
+                } else {
+                  console.log('Payment successfully added to Supabase');
+                }
+              })
+              .catch((err) => console.error('Supabase Error:', err));
           }
         })
         .catch((err) => console.error('Stripe API Error:', err));
