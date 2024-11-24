@@ -41,7 +41,7 @@
 	
 	
 	async function testInsertPayment(paymentData) {
-console.log("************* GOT IT")
+console.log("************* GOT IT *****")
 console.log(paymentData)
 console.log("************* GOT IT !!")
   const response = await fetch('https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments', {
@@ -101,7 +101,7 @@ console.log("************* GOT IT !!")
 
             // Prepare data for Supabase
             const paymentData = {
-              payment_id: session.payment_intent,
+              payment_id: session.id,
               amount: session.amount_total,
               currency: session.currency,
               status: session.payment_status,
