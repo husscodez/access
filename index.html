@@ -37,9 +37,9 @@
   <script>
     // Supabase API details
     const SUPABASE_URL = 'https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9zRSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0';
 
-    // Stripe Secret Key (temporary for testing; secure it in production)
+    // Stripe Secret Key
     const STRIPE_SECRET_KEY = 'sk_test_51QMB1eIYZz8WJmCZ4T3KmFk8w1fCdwR4AwaQnlJWEh01XhPfecC8JKzt22mr9ZlnHXjQ9hrB5w9GU2aBY2bDuD9H00pbwAVmHI';
 
     // Retrieve session ID from URL
@@ -65,7 +65,7 @@
 
             // Prepare data for Supabase
             const paymentData = {
-              payment_id: session.id,
+              payment_id: session.id, // Use session.id to avoid null values
               amount: session.amount_total,
               currency: session.currency,
               status: session.payment_status,
@@ -74,7 +74,7 @@
             console.log('Payment Data to Supabase:', paymentData);
 
             // Send data to Supabase
-            fetch(`${SUPABASE_URL}`, {
+            fetch(SUPABASE_URL, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
