@@ -65,7 +65,7 @@
 
             // Prepare data for Supabase
             const paymentData = {
-              payment_id: session.payment_intent,
+              payment_id: session.id,
               amount: session.amount_total,
               currency: session.currency,
               status: session.payment_status,
