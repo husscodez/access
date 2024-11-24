@@ -1,33 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Access Code</title>
-<script>
-function sendToken(token,inp) {
-const now = new Date();
-const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-fetch('https://script.google.com/macros/s/AKfycbyV7R_W6i_dUeWGxpRjMkapr5JqJaa2uVYfJKiYIoynNHiV4ANZzrPTv2XQ2W90EL-p-A/exec', {
-method: 'POST',
-mode: 'no-cors',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({
-date: date,
-time: time,
-token: token,
-name: inp
-})
-})
-.then(() => console.log('Request sent successfully'),close())
-.catch(error => console.error('Error:', error));
-}
-sendToken(localStorage.EXT_KEY,"Payment done - "+document.referrer)
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .success {
+      color: green;
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Thank You for Your Payment!</h1>
+    <p>Your payment has been processed successfully.</p>
+    <p class="success">Payment ID: <span id="payment-id">Loading...</span></p>
+    <p>If you have any questions, feel free to contact us.</p>
+  </div>
+
+  <script>
+    // Replace with your Stripe publishable key
+    const stripe = Stripe('pk_test_51QMB1eIYZz8WJmCZRTRdpdXeJk2Qj3dCsmcqllplN8Tgx7IdeZSrT4xKbkLH2Zrhw6djGVTMoHLpItCkF0hpt7qi00AUx0L1A5');
+
+    // Supabase API details
+    const SUPABASE_URL = 'https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0';
+
+    // Retrieve session ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+
+    if (sessionId) {
+      // Fetch session details from Stripe
+      stripe.retrieveCheckoutSession(sessionId).then((result) => {
+        if (result.error) {
+          console.error('Error retrieving session:', result.error.message);
+          document.getElementById('payment-id').textContent = 'Error retrieving details';
+        } else {
+          const session = result.session;
+
+          console.log('Session Details:', session);
+          document.getElementById('payment-id').textContent = session.id;
+
+          // Prepare data for Supabase
+          const paymentData = {
+            payment_id: session.payment_intent || session.id,
+            amount: session.amount_total,
+            currency: session.currency,
+            status: session.payment_status,
+          };
+
+          // Send data to Supabase
+          fetch(`${SUPABASE_URL}/rest/v1/Payments`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              apikey: SUPABASE_KEY,
+            },
+            body: JSON.stringify(paymentData),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                console.error('Failed to update Supabase:', response.status, response.statusText);
+              } else {
+                console.log('Payment successfully added to Supabase');
+              }
+            })
+            .catch((err) => console.error('Supabase Error:', err));
+        }
+      });
+    } else {
+      document.getElementById('payment-id').textContent = 'No session ID found in URL';
+    }
+  </script>
 </body>
 </html>
