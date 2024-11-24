@@ -41,7 +41,7 @@
 	
 	
 	async function testInsertPayment(paymentData) {
-console.log("************* GOT IT *****")
+console.log("************* GOT IT !!!!")
 console.log(paymentData)
 console.log("************* GOT IT !!")
   const response = await fetch('https://mvlqlgpeqieuayciriij.supabase.co/rest/v1/Payments', {
@@ -51,7 +51,7 @@ console.log("************* GOT IT !!")
       apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12bHFsZ3BlcWlldWF5Y2lyaWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMTI0NzEsImV4cCI6MjA0NzY4ODQ3MX0.GB4nqbEPmkOhq8YhdSzjONchHLFc-9WECxy98bll4p0',
     },
     body: JSON.stringify({
-      payment_id: paymentData.id,
+      payment_id: paymentData.payment_id,
       amount: paymentData.amount,
       currency: paymentData.currency,
       status: paymentData.status,
@@ -101,7 +101,7 @@ console.log("************* GOT IT !!")
 
             // Prepare data for Supabase
             const paymentData = {
-              payment_id: 010101,//session.id,
+              payment_id: session.id,
               amount: session.amount_total,
               currency: session.currency,
               status: session.payment_status,
