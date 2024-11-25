@@ -1,2 +1,5 @@
-alert(location.href)
-console.log(location)
+document.body.ondblclick=e=>{
+console.log("*****")
+console.log(comments)
+console.log("*****")
+}
