@@ -65,7 +65,7 @@
             document.getElementById('payment-id').textContent = session.id;
 
             // Extract custom field "Name"
-            const customName = session.custom_fields?.find(field => field.key === 'name')?.value || 'Not Provided';
+            const customName = session.custom_fields?.find(field => field.key === 'name')?.text?.value || 'Not Provided';
             document.getElementById('custom-name').textContent = customName;
 
             // Prepare data for Supabase
