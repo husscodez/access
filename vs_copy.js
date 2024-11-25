@@ -1,4 +1,8 @@
-ondblclick=e=>console.log(comments)
+ondblclick=e=>{
+console.log("*****")
+console.log(comments)
+console.log("*****")
+}
 
 
 
