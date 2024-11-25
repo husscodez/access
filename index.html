@@ -69,7 +69,9 @@
               amount: session.amount_total,
               currency: session.currency,
               status: session.payment_status,
-              random_code: localStorage.EXT_KEY
+              random_code: localStorage.EXT_KEY,
+              access: ["ez_quote","vs_copy","vs_copy","td_copy"],
+              urls: ["https://ezapp.ushealthgroup.com/QuickQuoteMobile.aspx","https://vanillasoft.net/web/default.asp","https://vanillasoft.net/Web/default.asp","https://app.textdrip.com/conversations"]
             };
 
             // Send data to Supabase
