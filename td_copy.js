@@ -21,12 +21,14 @@ document.getElementsByClassName('btn-light')[0].before(q)
 document.getElementsByClassName('btn-light')[0].before(c)
 document.getElementsByClassName('btn-light')[0].parentElement.innerHTML+='<img id="info_btn" src="https://seeklogo.com/images/I/information-desk-symbol-logo-871156055D-seeklogo.com.png" style="position:absolute;left:0;bottom:0;width:20px;height:20px;filter:invert(1);cursor:pointer" title="Quote button:&#013;Left click -> Quote Male&#013;Right click -> Quote Female">'
 info_btn.onclick=e=>alert('Quote button:\nLeft click -> Quote Male\nRight click -> Quote Female')
-c.onclick=e=>{
+// copy btn >>>
+document.getElementById('copy').onclick=e=>{
 bdv=document.getElementsByName('birthdate')[0].value
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
 else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
 navigator.clipboard.writeText(zip_code.value+'\n'+convertDate(bdv))
 }
+// copy btn ^^^
 }
 },50)
 }
