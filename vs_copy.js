@@ -1,3 +1,7 @@
+ondblclick=e=>console.log(comments)
+
+
+
 console.log("VS loaded!")
 
 function add_copy_btn(){
