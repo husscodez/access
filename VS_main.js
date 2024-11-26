@@ -1,10 +1,9 @@
-console.log("VS loaded! --- TESTING ---")
+console.log("VS loaded! --- TESTING ----!000!----!!111!")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
   document.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
 }
-
 
 
 // on load begin >>>
@@ -17,8 +16,8 @@ onload=e=>{
     if(!document.getElementsByClassName('copy').length){
       setTimeout(function(){
         if(!document.getElementsByClassName('copy').length){
-		console.log("--- Attempt TWO....")
-		add_copy_btn()
+          console.log("--- Attempt TWO....")
+          add_copy_btn()
 	}
         else{
           setTimeout(function(){
@@ -38,7 +37,7 @@ onload=e=>{
         }
       },3e3)
     }
-  } // add copy btn ^^^
+  }// add copy btn ^^^
 
   // search numb format >>>
   document.body.onclick=e=>{
@@ -46,7 +45,7 @@ onload=e=>{
     if(e.target.className=='copy'){
       navigator.clipboard.writeText(document.getElementById('ZipCode').value+'\n'+(document.getElementById('n2393619').value.length>3?document.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-document.getElementById('n2393583').value))+'\n')
     }
-  } // search numb format ^^^
+  }// search numb format ^^^
 
   onmousedown=e=>{
 		// NC + wait/hide notif >>>
@@ -64,7 +63,7 @@ onload=e=>{
         },document.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
       },200)
     }
-  } // NC + wait/hide notif ^^^
+  }// NC + wait/hide notif ^^^
 
   // search numb format >>>
   document.addEventListener("paste",e=>{
@@ -78,7 +77,7 @@ onload=e=>{
         }
       },20)
     }
-  }) // search numb format ^^^
+  })// search numb format ^^^
 
 
   // 24 hr btn >>>
@@ -97,6 +96,3 @@ onload=e=>{
 
 
 } // onload end ^^^
-
-
-
