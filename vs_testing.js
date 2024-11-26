@@ -1,5 +1,5 @@
 console.log("***** 000")
-//console.log(comments)
+console.log(comments)
 console.log("*****")
 
 /*
