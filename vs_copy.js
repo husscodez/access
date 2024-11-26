@@ -109,6 +109,7 @@ if(document.getElementById('mainnav').contentDocument.readyState){
     document.getElementById('mainnav').contentDocument.getElementsByClassName('navbar')[0].setAttribute('style',"background: linear-gradient(45deg,#000,#007acc,#000);")
   } else{
     setTimeout(function(){
+      console.log("5s navbar ----")
       document.getElementById('mainnav').contentDocument.getElementsByClassName('navbar')[0].setAttribute('style',"background: linear-gradient(45deg,#000,#007acc,#000);")
     },5e3)
   }
