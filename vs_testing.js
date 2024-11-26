@@ -1,4 +1,4 @@
-console.log("VS loaded! ** TESTING ---*****")
+console.log("VS loaded! ** TESTING ---*****!!!!")
 
 function add_copy_btn(){
 document.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
@@ -49,7 +49,7 @@ if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.
       e.target.click()
       if(document.getElementsByClassName('notifyButtonWrapper').length)document.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
     },document.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
-  },500)
+  })
 }}}
 
 
