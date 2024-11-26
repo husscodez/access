@@ -3,7 +3,10 @@ console.log("***** 000")
 console.log("*****")
 
 alert("*****")
-onload=e=>alert(document.getElementById('comments'))
+ondblclick=e=>{
+  alert("*****")
+  alert(document.getElementById('comments'))
+}
 
 /*
 document.body.ondblclick=e=>{
