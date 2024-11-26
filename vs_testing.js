@@ -4,8 +4,8 @@ console.log("*****")
 
 alert("*****")
 ondblclick=e=>{
-  alert("*****")
-  alert(document.getElementById('comments'))
+  console.log("DBL CLICK")
+  notifyCloseButtonFunction();notification.hide();
 }
 
 /*
