@@ -1,9 +1,32 @@
-console.log("VS loaded! --- TESTING ----!000!----!!!")
+console.log("VS loaded! --- TESTING ----!000!----!!999!")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
   document.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
 }
+
+
+
+document.onload=e=>{
+console.log("--- VS LOADED ---... (document)")
+}
+
+
+document.body.onload=e=>{
+console.log("--- VS LOADED ---... (document.body)")
+}
+
+
+window.addEventListener('load', () => {
+console.log("--- VS LOADED ---... (window evt listener)")
+})
+
+
+setTimeout(function(){
+console.log("--- VS LOADED ---... (Timeout function 8s)")
+},8e3)
+
+
 
 // on load begin >>>
 onload=e=>{
@@ -14,13 +37,22 @@ onload=e=>{
     add_copy_btn()
     if(!document.getElementsByClassName('copy').length){
       setTimeout(function(){
-        if(!document.getElementsByClassName('copy').length){add_copy_btn()}
+        if(!document.getElementsByClassName('copy').length){
+		console.log("--- Attempt TWO....")
+		add_copy_btn()
+	}
         else{
           setTimeout(function(){
-            if(!document.getElementsByClassName('copy').length){add_copy_btn()}
+            if(!document.getElementsByClassName('copy').length){
+		console.log("--- Attempt THREE....")
+		add_copy_btn()
+	    }
             else{
               setTimeout(function(){
-                if(!document.getElementsByClassName('copy').length){add_copy_btn()}
+                if(!document.getElementsByClassName('copy').length){
+			console.log("--- Attempt FOUR....")
+			add_copy_btn()
+		}
               },3e3)
             }
           },3e3)
@@ -88,22 +120,4 @@ onload=e=>{
 } // onload end ^^^
 
 
-document.onload=e=>{
-console.log("--- VS LOADED ---... (document)")
-}
-
-
-document.body.onload=e=>{
-console.log("--- VS LOADED ---... (document.body)")
-}
-
-
-window.addEventListener('load', () => {
-console.log("--- VS LOADED ---... (window evt listener)")
-})
-
-
-setTimeout(function(){
-console.log("--- VS LOADED ---... (Timeout function 8s)")
-},8e3)
 
