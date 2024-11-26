@@ -1,4 +1,4 @@
-console.log("VS loaded! --- TESTING ----!000!----")
+console.log("VS loaded! --- TESTING ----!000!----!!!")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
@@ -103,4 +103,7 @@ console.log("--- VS LOADED ---... (window evt listener)")
 }
 
 
+setTimeout(function(){
+console.log("--- VS LOADED ---... (Timeout function 8s)")
+},8e3)
 
