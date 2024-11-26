@@ -1,4 +1,4 @@
-console.log("VS loaded! ** TESTING ---*****!!!!")
+console.log("VS loaded! ** TESTING -----")
 
 function add_copy_btn(){
 document.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
@@ -30,28 +30,24 @@ document.body.onclick=e=>{
     navigator.clipboard.writeText(document.getElementById('ZipCode').value+'\n'+(document.getElementById('n2393619').value.length>3?document.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-document.getElementById('n2393583').value))+'\n')
   }
 
-if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.innerText.includes('Retry ')||e.target.innerText=='OutDefault'){
-  if(document.getElementById('comments').value==""){
-    if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
-      document.getElementById('comments').value="NC"
-    } else if(e.target.innerText.includes('Retry ')&&e.target.parentElement.id=="quickResultCodes"){
-      document.getElementById('comments').value=e.target.innerText
-    } else{
-      document.getElementById('comments').value="OUT"
+// NC + wait/hide notif >>
+onmousedown=e=>{
+    if(e.target.tagName=='BUTTON'&&(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'||e.target.innerText=='OutDefault'||e.target.innerText.includes('Retry '))){
+        if(comments.value.length==0||comments.value.slice(0,2)=='NC'&&comments.value.length==2||comments.value.slice(0,3)=='NC '&&comments.value.length<=7||comments.value=='OUT'){
+            if(e.target.innerText.includes('Retry '))comments.value='NC '+e.target.innerText.split(' ')[1]
+            else if(e.target.innerText=='OutDefault')comments.value='OUT'
+            else comments.value='NC'
+        }
+        setTimeout(function(){
+            notifyCloseButtonFunction()
+            notification.hide()
+            setTimeout(function(){
+                e.target.click()
+            },document.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
+        },200)
     }
-  }
-  setTimeout(function(){
-    //document.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
-    console.log('notif hidden >>>')
-    notifyCloseButtonFunction();notification.hide();
-    console.log('notif hidden ^^^')
-    setTimeout(function(){
-      e.target.click()
-      if(document.getElementsByClassName('notifyButtonWrapper').length)document.getElementsByClassName('notifyButtonWrapper')[0].childNodes[0].click()
-    },document.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
-  })
-}}}
-
+}
+// NC + wait/hide notif ^^
 
 // search numb format >>>
 document.addEventListener("paste",e=>{
