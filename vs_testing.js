@@ -13,7 +13,7 @@ console.log("***** 222")
 console.log(comments)
 console.log("*****")
 }
-document.body.contextmenu=e=>{
+document.body.oncontextmenu=e=>{
 e.preventDefault()
 console.log("***** 333")
 console.log(comments)
