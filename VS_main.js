@@ -8,7 +8,7 @@ function add_copy_btn(){
 
 
 // on load begin >>>
-window.addEventListener('load',()=>{
+onload=e=>{
 	console.log("--- VS LOADED ---...")
   // add copy btn >>>
   if(!document.getElementsByClassName('copy').length){
@@ -96,7 +96,7 @@ window.addEventListener('load',()=>{
 
 
 
-}) // onload end ^^^
+} // onload end ^^^
 
 
 
