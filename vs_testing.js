@@ -2,6 +2,9 @@ console.log("***** 000")
 console.log(comments)
 console.log("*****")
 
+alert("*****")
+alert(document.getElementById('comments'))
+
 /*
 document.body.ondblclick=e=>{
 console.log("***** 111")
