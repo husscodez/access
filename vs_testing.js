@@ -4,7 +4,7 @@ function add_copy_btn(){
 document.getElementById('clientName').insertAdjacentHTML('afterend','<button class="copy" style="position:absolute;right:0px;top:10px;width:10px;padding:0px;max-width:15px;hight:10px;z-index:1;padding:4px" tabindex="0" data-accessibility-tab="true"><img class="copy" src="https://cdn-icons-png.flaticon.com/512/54/54702.png" style="width:100%;max-width:15px;margin:0px;padding:0px;hight:100%;vertical-align: middle;filter: invert(.95);"></button>')
 }
 
-onload=e=>{
+document.body.onload=e=>{
 if(!document.getElementsByClassName('copy').length){
   add_copy_btn()
   if(!document.getElementsByClassName('copy').length){
@@ -54,5 +54,38 @@ document.addEventListener("paste",e=>{
 })
 // search numb format ^^^
 
-
 } // on load end
+
+
+
+
+
+
+
+// 24 hr btn >>>
+let name_hist=""
+document.body.onmousedown=e=>{
+  /*if(e.target.innerText=='NC DEFAULT'||e.target.innerText=='No Contact'){
+    name_hist=(bodyIframe.contentDocument.getElementById('FirstName').value+bodyIframe.contentDocument.getElementById('LastName').value).toLocaleUpperCase()
+    name_hist_int=setInterval(function(){
+      if((bodyIframe.contentDocument.getElementById('FirstName').value+bodyIframe.contentDocument.getElementById('LastName').value).toLocaleUpperCase()!=name_hist){
+        clearInterval(name_hist_int)
+        setTimeout(function(){
+          if(!bodyIframe.contentDocument.getElementById('clientPanelPhoneFetch').innerText.includes('1 (')){
+            //bodyIframe.contentDocument.getElementById('tcpaShowNumbers').click()
+            //bodyIframe.contentDocument.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
+            //bodyIframe.contentDocument.getElementsByClassName('dialphone')[0].click()
+          }
+        },1e3)
+      }
+    },500)
+  }*/
+  if(e.target.id=='tcpaShowNumbers'){
+    setTimeout(function(){
+      document.getElementById('tcpaShowNumbers').click()
+      document.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
+      document.getElementsByClassName('dialphone')[0].click()
+    },100)
+  }
+}
+// 24 hr btn ^^^
