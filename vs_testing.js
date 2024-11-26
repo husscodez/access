@@ -2,7 +2,6 @@ console.log("***** 000")
 //console.log(comments)
 console.log("*****")
 
-alert("*****")
 ondblclick=e=>{
   console.log("DBL CLICK")
   notifyCloseButtonFunction();notification.hide();
