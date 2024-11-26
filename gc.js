@@ -1,4 +1,4 @@
-console.log("GC loaded!")
+// console.log("GC loaded!")
 
 async function gf(){
     return localStorage.EXT_KEY
