@@ -1,4 +1,4 @@
-console.log("VS loaded! --- TESTING ----!00000!-")
+console.log("VS loaded! --- TESTING ----!000!-")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
@@ -71,19 +71,15 @@ onload=e=>{
 
 
   // 24 hr btn >>>
-  let name_hist=""
   document.body.onmousedown=e=>{
     if(e.target.id=='tcpaShowNumbers'){
+      overrideTcpa24hrLimitConfirmed()
+      document.getElementsByClassName('dialphone')[0].click()
       setTimeout(function(){
-        document.getElementById('tcpaShowNumbers').click()
-        document.getElementsByClassName('notificationButton notificationButtonBlue notifyButton')[0].click()
-        document.getElementsByClassName('dialphone')[0].click()
-      },100)
+        notification.hide()
+      },200)
     }
   } // 24 hr btn ^^^
-
-
-
 
 
 
