@@ -1,8 +1,8 @@
 console.log("***** 000")
-console.log(comments)
+//console.log(comments)
 console.log("*****")
 
-
+/*
 document.body.ondblclick=e=>{
 console.log("***** 111")
 console.log(comments)
@@ -19,3 +19,4 @@ console.log("***** 333")
 console.log(comments)
 console.log("*****")
 }
+//*/
