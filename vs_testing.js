@@ -1,4 +1,4 @@
-console.log("VS loaded! --- TESTING ----!000!-")
+console.log("VS loaded! --- TESTING ----!000!----")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
@@ -86,5 +86,21 @@ onload=e=>{
 
 
 } // onload end ^^^
+
+
+document.onload=e=>{
+console.log("--- VS LOADED ---... (document)")
+}
+
+
+document.body.onload=e=>{
+console.log("--- VS LOADED ---... (document.body)")
+}
+
+
+window.addEventListener('load', () => {
+console.log("--- VS LOADED ---... (window evt listener)")
+}
+
 
 
