@@ -100,7 +100,7 @@ console.log("--- VS LOADED ---... (document.body)")
 
 window.addEventListener('load', () => {
 console.log("--- VS LOADED ---... (window evt listener)")
-}
+})
 
 
 setTimeout(function(){
