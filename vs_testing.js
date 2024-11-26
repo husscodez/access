@@ -1,4 +1,4 @@
-console.log("VS loaded! --- TESTING ----!000!----!!111!")
+console.log("VS loaded! --- TESTING ---")
 
 function add_copy_btn(){
   console.log("--- ADD COPY BTN ---")
@@ -6,19 +6,9 @@ function add_copy_btn(){
 }
 
 
-window.addEventListener('load', () => {
-console.log("--- VS LOADED ---... (window evt listener)")
-})
-
-
-setTimeout(function(){
-console.log("--- VS LOADED ---... (Timeout function 8s)")
-},8e3)
-
-
 
 // on load begin >>>
-onload=e=>{
+window.addEventListener('load',()=>{
 	console.log("--- VS LOADED ---...")
   // add copy btn >>>
   if(!document.getElementsByClassName('copy').length){
@@ -48,7 +38,7 @@ onload=e=>{
         }
       },3e3)
     }
-  }// add copy btn ^^^
+  } // add copy btn ^^^
 
   // search numb format >>>
   document.body.onclick=e=>{
@@ -56,7 +46,7 @@ onload=e=>{
     if(e.target.className=='copy'){
       navigator.clipboard.writeText(document.getElementById('ZipCode').value+'\n'+(document.getElementById('n2393619').value.length>3?document.getElementById('n2393619').value.replace(/\D/g,''):'01/01/'+(new Date().getYear()+1900-document.getElementById('n2393583').value))+'\n')
     }
-  }// search numb format ^^^
+  } // search numb format ^^^
 
   onmousedown=e=>{
 		// NC + wait/hide notif >>>
@@ -74,7 +64,7 @@ onload=e=>{
         },document.getElementsByClassName('notificationContent')[0].innerText.split('have ')[1].split(' seconds')[0]*1000)
       },200)
     }
-  }// NC + wait/hide notif ^^^
+  } // NC + wait/hide notif ^^^
 
   // search numb format >>>
   document.addEventListener("paste",e=>{
@@ -88,7 +78,7 @@ onload=e=>{
         }
       },20)
     }
-  })// search numb format ^^^
+  }) // search numb format ^^^
 
 
   // 24 hr btn >>>
@@ -106,7 +96,7 @@ onload=e=>{
 
 
 
-} // onload end ^^^
+}) // onload end ^^^
 
 
 
