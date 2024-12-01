@@ -1,4 +1,4 @@
-console.log("TD TESTING *****")
+console.log("TD TESTING *****!!!")
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
@@ -36,7 +36,8 @@ M_state = document.getElementsByName('state')[0].value
 M_phone = document.querySelectorAll('[name=phone]')[1].value.slice(1)
 M_status = "APPT SET"
 M_source = "VS DSL"
-M_dob = document.querySelectorAll('[name=birthdate]')[0].value.replace(/(\d{2})[\-/]?(\d{2})[\-/]?(\d{4})/,'$3-$1-$2')
+//M_dob = document.querySelectorAll('[name=birthdate]')[0].value.replace(/(\d{2})[\-/]?(\d{2})[\-/]?(\d{4})/,'$3-$1-$2')
+M_dob = convertDate(document.querySelectorAll('[name=birthdate]')[0].value)
 M_texting = "TD 1"
 M_zip = document.querySelectorAll('[name=zipcode]')[0].value
 M_email = document.querySelectorAll('[name=email]')[0].value
