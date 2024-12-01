@@ -1,4 +1,4 @@
-console.log("TD TESTING *****!!!")
+console.log("TD TESTING *****!")
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
@@ -40,7 +40,7 @@ M_dob = convertDate(document.querySelectorAll('[name=birthdate]')[0].value)
 M_texting = "TD 1"
 M_zip = document.querySelectorAll('[name=zipcode]')[0].value
 M_email = document.querySelectorAll('[name=email]')[0].value
-M_address = document.querySelectorAll('[name=address]')[0].value
+M_address = ""//document.querySelectorAll('[name=address]')[0].value
 
 columnValues={
 "text__1": M_state,
