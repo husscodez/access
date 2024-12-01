@@ -36,11 +36,11 @@ M_state = document.getElementsByName('state')[0].value
 M_phone = document.querySelectorAll('[name=phone]')[1].value.slice(1)
 M_status = "APPT SET"
 M_source = "VS DSL"
-//M_dob = document.querySelectorAll('[name=birthdate]')[0].value.replace(/(\d{2})[\-/]?(\d{2})[\-/]?(\d{4})/,'$3-$1-$2')
 M_dob = convertDate(document.querySelectorAll('[name=birthdate]')[0].value)
 M_texting = "TD 1"
 M_zip = document.querySelectorAll('[name=zipcode]')[0].value
 M_email = document.querySelectorAll('[name=email]')[0].value
+M_address = document.querySelectorAll('[name=address]')[0].value
 
 columnValues={
 "text__1": M_state,
@@ -50,7 +50,8 @@ columnValues={
 "text1__1": M_dob,
 "dropdown__1": M_texting,
 "text3__1": M_zip,
-"email__1": { "email": M_email, "text": M_email }
+"email__1": { "email": M_email, "text": M_email },
+"numbers9__1": M_address
 }
 
 const query = `
