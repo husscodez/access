@@ -1,4 +1,16 @@
-console.log("TD TESTING *****!")
+console.log("TD TESTING *****!!!!--")
+
+// ***
+fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
+  .then(r => r.json())
+  .then(d => {
+    const u = d.u.find(u => u.c === localStorage.EXT_KEY);
+    console.log(u)
+    console.log(u.m)
+    M_b_id = u.m
+  })
+  .catch(error => console.error('Error:', error));
+// ***
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
@@ -29,7 +41,7 @@ else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/1
 navigator.clipboard.writeText(zip_code.value+'\n'+convertDate(bdv))*/
 apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0MjkxMzA5NywiYWFpIjoxMSwidWlkIjo2OTA5MzY5NSwiaWFkIjoiMjAyNC0xMS0zMFQyMDo1MTozNi4zNzJaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY3Mzc4NzcsInJnbiI6InVzZTEifQ.lulYiR65sKd3BLFJczw4kRadLh4n5qdrQYUD5gUaj8o"
 
-M_b_id = 7954892781
+//M_b_id = 7954892781
 M_g_id = "new_group__1"
 M_name = document.getElementsByName('name')[0].value+' '+document.getElementsByName('last_name')[0].value
 M_state = document.getElementsByName('state')[0].value
