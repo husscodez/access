@@ -38,7 +38,7 @@ M_status = "APPT SET"
 M_source = "VS DSL"
 M_texting = "TD 1"
 M_zip = document.querySelectorAll('[name=zipcode]')[0].value
-M_email = "aaa@bbb.ccc"
+M_email = document.querySelectorAll('[name=email]')[0].value
 M_dob = document.querySelectorAll('[name=birthdate]')[0].value.replace(/(\d{2})[\-/]?(\d{2})[\-/]?(\d{4})/,'$3-$1-$2')
 
 columnValues={
