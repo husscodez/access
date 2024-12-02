@@ -26,8 +26,10 @@ q.id='quote'
 q.innerText='Quote'*/
 abi=setInterval(function(){
 if(document.getElementsByClassName('btn-light')[0]!=undefined){
+setTimeout(function(){ // testing timeout **?**
 dobv=document.getElementsByName('birthdate')[0]
 if(dobv.value.split('-')[0].length==4)document.getElementsByName('birthdate')[0].value=dobv.value.split('-')[1]+'-'+dobv.value.split('-')[2]+'-'+dobv.value.split('-')[0]
+},1e3) // testing timeout **?**
 clearInterval(abi)
 //document.getElementsByClassName('btn-light')[0].before(q)
 document.getElementsByClassName('btn-light')[0].before(c)
