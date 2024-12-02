@@ -4,10 +4,10 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 
 onclick=e=>{
 if(e.target.id=='sel_username'){
-/*c=document.createElement('button')
+c=document.createElement('button')
 c.className='btn btn-info'
 c.id='copy'
-c.innerText='Copy'*/
+c.innerText='Copy'
 q=document.createElement('button')
 q.className='btn btn-info'
 q.id='quote'
@@ -18,7 +18,7 @@ dobv=document.getElementsByName('birthdate')[0]
 if(dobv.value.split('-')[0].length==4)document.getElementsByName('birthdate')[0].value=dobv.value.split('-')[1]+'-'+dobv.value.split('-')[2]+'-'+dobv.value.split('-')[0]
 clearInterval(abi)
 document.getElementsByClassName('btn-light')[0].before(q)
-//document.getElementsByClassName('btn-light')[0].before(c)
+document.getElementsByClassName('btn-light')[0].before(c)
 document.getElementsByClassName('btn-light')[0].parentElement.innerHTML+='<img id="info_btn" src="https://seeklogo.com/images/I/information-desk-symbol-logo-871156055D-seeklogo.com.png" style="position:absolute;left:0;bottom:0;width:20px;height:20px;filter:invert(1);cursor:pointer" title="Quote button:&#013;Left click -> Quote Male&#013;Right click -> Quote Female">'
 info_btn.onclick=e=>alert('Quote button:\nLeft click -> Quote Male\nRight click -> Quote Female')
 // copy btn >>>
