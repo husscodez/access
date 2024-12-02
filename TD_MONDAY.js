@@ -1,4 +1,4 @@
-console.log("TD TESTING *****!!!!--***")
+console.log("TD TESTING ******")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -48,7 +48,7 @@ M_g_id = "new_group__1"
 M_name = document.getElementsByName('name')[0].value+' '+document.getElementsByName('last_name')[0].value
 M_state = document.getElementsByName('state')[0].value
 M_phone = document.querySelectorAll('[name=phone]')[1].value.slice(1)
-M_status = "APPT SET"
+M_status = "POSITIVE RESPONSE"//"APPT SET"
 M_source = "VS DSL"
 M_dob = convertDate(document.querySelectorAll('[name=birthdate]')[0].value)
 M_texting = "TD 1"
