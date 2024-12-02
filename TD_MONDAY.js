@@ -1,4 +1,4 @@
-console.log("TD TESTING ******!!")
+console.log("TD basic")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
