@@ -18,8 +18,8 @@ onclick=e=>{
 if(e.target.id=='sel_username'){
 c=document.createElement('button')
 c.className='btn btn-info'
-c.id='copy'
-c.innerText='Copy'
+c.id='monday_btn'
+c.innerText='Monday'
 q=document.createElement('button')
 q.className='btn btn-info'
 q.id='quote'
