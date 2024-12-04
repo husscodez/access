@@ -47,6 +47,8 @@ apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0MjkxMzA5NywiYWFpIjoxMSwidWlkIjo2OTA5M
 //M_b_id = 7954892781
 M_g_id = "new_group__1"
 M_name = document.getElementsByName('name')[0].value+' '+document.getElementsByName('last_name')[0].value
+
+M_quote = document.querySelectorAll('[name=quote]')[0].value
 M_state = document.getElementsByName('state')[0].value
 M_phone = document.querySelectorAll('[name=phone]')[1].value.slice(1)
 M_status = "POSITIVE RESPONSE"//"APPT SET"
@@ -58,6 +60,7 @@ M_email = document.querySelectorAll('[name=email]')[0].value
 M_address = document.querySelectorAll('[name=address]')[0].value
 
 columnValues={
+"numbers__1": M_quote
 "text__1": M_state,
 "phone__1": M_phone,
 "status": M_status,
