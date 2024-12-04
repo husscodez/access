@@ -1,4 +1,4 @@
-console.log("TD basic")
+console.log("TD basic...")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -15,6 +15,7 @@ fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timesta
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
 onclick=e=>{
+	console.log("Clicked...")
 if(e.target.id=='sel_username'){
 c=document.createElement('button')
 c.className='btn btn-info'
@@ -38,6 +39,8 @@ document.getElementsByClassName('btn-light')[0].before(c)
 // monday_btn btn >>>
 //document.getElementById('monday_btn').onclick=e=>{
 if(e.target.id == 'monday_btn'){ // *** TESTING ***
+	console.log("Monday Button Clicked...")
+	console.log(M_b_id+" ...")
 /*bdv=document.getElementsByName('birthdate')[0].value
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
 else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
