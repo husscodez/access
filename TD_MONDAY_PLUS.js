@@ -1,4 +1,4 @@
-console.log("TD plus")
+console.log("TD plus..")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -38,6 +38,7 @@ info_btn.onclick=e=>alert('Quote button:\nLeft click -> Quote Male\nRight click 
 // monday_btn btn >>>
 document.getElementById('monday_btn').onclick=e=>{
 	console.log("Monday button clicked")
+	console.log(document.querySelectorAll('[name=quote]')[0].value)
 /*bdv=document.getElementsByName('birthdate')[0].value
 if(bdv.split(/\D/)[2]<50)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/20'+bdv.split(/\D/)[2]
 else if(bdv.split(/\D/)[2]<100)bdv=bdv.split(/\D/)[0]+'/'+bdv.split(/\D/)[1]+'/19'+bdv.split(/\D/)[2]
