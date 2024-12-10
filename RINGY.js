@@ -1,4 +1,4 @@
-console.log("Ringy loaded!!!")
+console.log("Ringy loaded")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -116,7 +116,7 @@ new MutationObserver(e=>{
 if(location.href!==lastUrl){
 lastUrl=location.href
 console.log('URL changed:',lastUrl)
-if(lastUrl.includes('https://app.ringy.com/home/leads?leadId='))addCopy()
+if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.includes('https://app.ringy.com/home/sms?leadId='))addCopy()
 }
 }).observe(document,{subtree:true,childList:true})
 
