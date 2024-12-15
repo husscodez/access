@@ -18,12 +18,6 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 
 
 
-// ==UserScript==
-// @name         Ringy
-// @match        https://app.ringy.com/home/leads*
-// ==/UserScript==
-
-
 function addCopy(){
 const copy_observer=new MutationObserver(()=>{
 if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className.includes('disabled')===false){
