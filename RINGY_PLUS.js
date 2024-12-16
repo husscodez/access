@@ -1,4 +1,4 @@
-console.log("Ringy PLUS")
+console.log("Ringy PLUS +++")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -17,16 +17,16 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 
 
 
-function addCopy(){
-const copy_observer=new MutationObserver(()=>{
+function addMondayBtn(){
+const btn_observer=new MutationObserver(()=>{
 if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className.includes('disabled')===false){
-copy_observer.disconnect()
-const copy_target=document.querySelector('#master-go-back-from-lead-button')
-const copy=copy_target.previousElementSibling.previousElementSibling.cloneNode(true)
-copy.innerHTML='Monday'
-copy.id='copy'
-copy_target.parentElement.appendChild(copy)
-copy.onclick=e=>{
+btn_observer.disconnect()
+const target_btn=document.querySelector('#master-go-back-from-lead-button')
+const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
+monday_btn.innerHTML='Monday'
+monday_btn.id='monday'
+target_btn.parentElement.appendChild(monday_btn)
+monday_btn.onclick=e=>{
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
   console.log("MONDAY Scrape")
 console.log(`
@@ -96,8 +96,8 @@ fetch('https://api.monday.com/v2', {
 }
 }
 })
-copy_observer.observe(document,{subtree:true,childList:true,attributes:true})
-setTimeout(()=>copy_observer.disconnect(),10e3)
+btn_observer.observe(document,{subtree:true,childList:true,attributes:true})
+setTimeout(()=>btn_observer.disconnect(),10e3)
 }
 
 
@@ -109,10 +109,10 @@ new MutationObserver(e=>{
 if(location.href!==lastUrl){
 lastUrl=location.href
 console.log('URL changed:',lastUrl)
-if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.includes('https://app.ringy.com/home/sms?leadId='))addCopy()
+if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.includes('https://app.ringy.com/home/sms?leadId='))addMondayBtn()
 }
 }).observe(document,{subtree:true,childList:true})
 
 onload=e=>{
-addCopy()
+addMondayBtn()
 }
