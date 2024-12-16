@@ -1,4 +1,4 @@
-console.log("Ringy PLUS +++")
+console.log("Ringy PLUS +++!!!!!")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -19,10 +19,11 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 
 function addMondayBtn(){
 const btn_observer=new MutationObserver(()=>{
-if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className.includes('disabled')===false){
+if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className){
 btn_observer.disconnect()
 const target_btn=document.querySelector('#master-go-back-from-lead-button')
 const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
+monday_btn.className="MuiButtonBase-root MuiButton-root MuiButton-contained jss282 MuiButton-containedPrimary MuiButton-containedSizeSmall MuiButton-sizeSmall"
 monday_btn.innerHTML='Monday'
 monday_btn.id='monday'
 target_btn.parentElement.appendChild(monday_btn)
