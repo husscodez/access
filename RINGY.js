@@ -1,4 +1,4 @@
-console.log("Ringy loaded")
+console.log("Ringy Loaded")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -15,21 +15,12 @@ fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timesta
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
+// **** CLICK >>>
 
-
-
-function addCopy(){
-const copy_observer=new MutationObserver(()=>{
-if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className.includes('disabled')===false){
-copy_observer.disconnect()
-const copy_target=document.querySelector('#master-go-back-from-lead-button')
-const copy=copy_target.previousElementSibling.previousElementSibling.cloneNode(true)
-copy.innerHTML='Monday'
-copy.id='copy'
-copy_target.parentElement.appendChild(copy)
-copy.onclick=e=>{
+onclick=e=>{
+if(e.target.id=="monday"){
+	console.log("MONDAY Scrape")
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
-  console.log("MONDAY Scrape")
 console.log(`
 Name: ${ci.childNodes[0].innerText}
 Phone: ${ci.childNodes[1].innerText}
@@ -96,13 +87,25 @@ fetch('https://api.monday.com/v2', {
 // **** MONDAY CODE **** ^^^
 }
 }
-})
-copy_observer.observe(document,{subtree:true,childList:true,attributes:true})
-setTimeout(()=>copy_observer.disconnect(),10e3)
+
+// **** CLICK ^^^
+
+function addMondayBtn(){
+const btn_observer=new MutationObserver(()=>{
+if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className){
+btn_observer.disconnect()
+const target_btn=document.querySelector('#master-go-back-from-lead-button')
+const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
+monday_btn.disabled=false
+monday_btn.className=monday_btn.className.replace(/ Mui-disabled/g,'')
+monday_btn.id='monday'
+monday_btn.innerHTML='Monday'
+target_btn.parentElement.appendChild(monday_btn)
 }
-
-
-
+})
+btn_observer.observe(document,{subtree:true,childList:true,attributes:true})
+setTimeout(()=>btn_observer.disconnect(),10e3)
+}
 
 
 let lastUrl=location.href;
@@ -110,13 +113,9 @@ new MutationObserver(e=>{
 if(location.href!==lastUrl){
 lastUrl=location.href
 console.log('URL changed:',lastUrl)
-if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.includes('https://app.ringy.com/home/sms?leadId='))addCopy()
+if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.includes('https://app.ringy.com/home/sms?leadId='))addMondayBtn()
 }
 }).observe(document,{subtree:true,childList:true})
 
-onload=e=>{
-addCopy()
-}
 
-
-
+addMondayBtn()
