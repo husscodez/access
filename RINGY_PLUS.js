@@ -29,9 +29,9 @@ monday_btn.id='monday'
 target_btn.parentElement.appendChild(monday_btn)
 
 setTimeout(function(){
-monday_btn.onclick=e=>{
+document.getElementById('monday').onclick=e=>{
+	console.log("MONDAY Scrape")
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
-  console.log("MONDAY Scrape")
 console.log(`
 Name: ${ci.childNodes[0].innerText}
 Phone: ${ci.childNodes[1].innerText}
