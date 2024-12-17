@@ -1,4 +1,4 @@
-console.log("Ringy PLUS +++!!!!!+++++!!!!")
+console.log("Ringy PLUS -------")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -28,8 +28,8 @@ monday_btn.innerHTML='Monday'
 monday_btn.id='monday'
 target_btn.parentElement.appendChild(monday_btn)
 
-setTimeout(function(){
-document.getElementById('monday').onclick=e=>{
+onclick=e=>{
+if(e.target.id=="monday"){
 	console.log("MONDAY Scrape")
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
 console.log(`
@@ -97,7 +97,7 @@ fetch('https://api.monday.com/v2', {
   .then(data => console.log(data));
 // **** MONDAY CODE **** ^^^
 }
-},2e3)
+}
 }
 })
 btn_observer.observe(document,{subtree:true,childList:true,attributes:true})
