@@ -27,6 +27,8 @@ monday_btn.className=monday_btn.className.replace(/ Mui-disabled/g,'')
 monday_btn.innerHTML='Monday'
 monday_btn.id='monday'
 target_btn.parentElement.appendChild(monday_btn)
+
+setTimeout(function(){
 monday_btn.onclick=e=>{
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
   console.log("MONDAY Scrape")
@@ -95,6 +97,7 @@ fetch('https://api.monday.com/v2', {
   .then(data => console.log(data));
 // **** MONDAY CODE **** ^^^
 }
+},2e3)
 }
 })
 btn_observer.observe(document,{subtree:true,childList:true,attributes:true})
