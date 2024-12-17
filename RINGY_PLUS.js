@@ -1,4 +1,4 @@
-console.log("Ringy PLUS -------")
+console.log("Ringy PLUS -------***")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -18,6 +18,8 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 // **** CLICK >>>
 
 onclick=e=>{
+	console.log("CLICKED")
+	console.log(e.target.id)
 if(e.target.id=="monday"){
 	console.log("MONDAY Scrape")
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
