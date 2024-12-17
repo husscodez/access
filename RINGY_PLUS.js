@@ -15,18 +15,7 @@ fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timesta
 
 convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mth,y)=>`${d.padStart(2,'0')}/${mth.padStart(2,'0')}/${y.length==2?'20'+y:y}`)
 
-
-
-function addMondayBtn(){
-const btn_observer=new MutationObserver(()=>{
-if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className){
-btn_observer.disconnect()
-const target_btn=document.querySelector('#master-go-back-from-lead-button')
-const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
-monday_btn.className=monday_btn.className.replace(/ Mui-disabled/g,'')
-monday_btn.innerHTML='Monday'
-monday_btn.id='monday'
-target_btn.parentElement.appendChild(monday_btn)
+// **** CLICK >>>
 
 onclick=e=>{
 if(e.target.id=="monday"){
@@ -98,14 +87,24 @@ fetch('https://api.monday.com/v2', {
 // **** MONDAY CODE **** ^^^
 }
 }
+
+// **** CLICK ^^^
+
+function addMondayBtn(){
+const btn_observer=new MutationObserver(()=>{
+if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementSibling?.previousElementSibling?.className){
+btn_observer.disconnect()
+const target_btn=document.querySelector('#master-go-back-from-lead-button')
+const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
+monday_btn.className=monday_btn.className.replace(/ Mui-disabled/g,'')
+monday_btn.innerHTML='Monday'
+monday_btn.id='monday'
+target_btn.parentElement.appendChild(monday_btn)
 }
 })
 btn_observer.observe(document,{subtree:true,childList:true,attributes:true})
 setTimeout(()=>btn_observer.disconnect(),10e3)
 }
-
-
-
 
 
 let lastUrl=location.href;
