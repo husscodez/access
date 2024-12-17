@@ -1,4 +1,4 @@
-console.log("Ringy PLUS -------***")
+console.log("Ringy PLUS -------***+++__")
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -18,8 +18,6 @@ convertDate=date=>date.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/,(m,d,mt
 // **** CLICK >>>
 
 onclick=e=>{
-	console.log("CLICKED")
-	console.log(e.target.id)
 if(e.target.id=="monday"){
 	console.log("MONDAY Scrape")
 var ci=document.getElementsByClassName('lead-primary-info-column')[0].childNodes[0].childNodes[0]
@@ -98,9 +96,10 @@ if(document?.querySelector('#master-go-back-from-lead-button')?.previousElementS
 btn_observer.disconnect()
 const target_btn=document.querySelector('#master-go-back-from-lead-button')
 const monday_btn=target_btn.previousElementSibling.previousElementSibling.cloneNode(true)
+monday_btn.disabled=false
 monday_btn.className=monday_btn.className.replace(/ Mui-disabled/g,'')
-monday_btn.innerHTML='Monday'
 monday_btn.id='monday'
+monday_btn.innerHTML='Monday'
 target_btn.parentElement.appendChild(monday_btn)
 }
 })
