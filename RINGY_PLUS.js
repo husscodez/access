@@ -117,6 +117,6 @@ if(lastUrl.includes('https://app.ringy.com/home/leads?leadId=')||lastUrl.include
 }
 }).observe(document,{subtree:true,childList:true})
 
-onload=e=>{
+
 addMondayBtn()
-}
+
