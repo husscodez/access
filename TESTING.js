@@ -3,12 +3,11 @@
 
 console.log("MP -> MO loaded")
 
-alert("34")
 
 
 // auto scroll >>>
 
-oncontextmenu=e=>{
+window.oncontextmenu=e=>{
 if(e.target.className=='account-logo'){
 e.preventDefault()
 if([...document.querySelectorAll('div')].find(e=>e.textContent==='Emailed items'))
@@ -26,7 +25,7 @@ else clearInterval(sif),document.getElementById('board-wrapper-first-level-conte
 
 
 
-function mp_to_mon(){
+window.mp_to_mon = function (){
 M_b_id=location.pathname.split('boards/')[1].split('/')[0]
 
 apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0MjkxMzA5NywiYWFpIjoxMSwidWlkIjo2OTA5MzY5NSwiaWFkIjoiMjAyNC0xMS0zMFQyMDo1MTozNi4zNzJaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjY3Mzc4NzcsInJnbiI6InVzZTEifQ.lulYiR65sKd3BLFJczw4kRadLh4n5qdrQYUD5gUaj8o"
@@ -35,7 +34,7 @@ apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ0MjkxMzA5NywiYWFpIjoxMSwidWlkIjo2OTA5M
 x=[...document.querySelectorAll("div")].find(e=>e.textContent=="Emailed items").parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('name-cell-component-side-cell navigableCell--gFQEL')
 
 
-function addLead(c){
+window.addLead = function(c){
 M_g_id = "new_group__1"
 M_name = c.split('First Name:\n')[1].split('\n')[0]+' '+c.split('Last Name:\n')[1].split('\n')[0]
 M_state = c.split('State:\n')[1].split('\n')[0]
@@ -83,7 +82,7 @@ fetch('https://api.monday.com/v2', {
 
 
 
-function getE(pid){
+window.getE = function(pid){
 fetch("https://api.monday.com/v2", {
   method: "POST",
   headers: {
