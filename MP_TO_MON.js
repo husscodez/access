@@ -1,3 +1,5 @@
+console.log("MP -> MO loaded")
+
 // auto scroll >>>
 
 oncontextmenu=e=>{
