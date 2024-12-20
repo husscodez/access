@@ -1,4 +1,4 @@
-// console.log("GC loaded!")
+console.log("GC loaded!")
 
 async function gf(){
     return localStorage.EXT_KEY
@@ -12,7 +12,7 @@ async function gf(){
     const d=await fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp="+new Date().getTime()).then(r=>r.json())
     const u=d.u.find(u=>u.c===f)
     if(u){
-      //console.log(`Access level: ${u.a}`)
+      console.log(`Access level: ${u.a}`)
       //console.log(u)
       const pf=u.a
       for(i=0;i<pf.length;i++){
