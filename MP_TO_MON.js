@@ -1,5 +1,8 @@
 console.log("MP -> MO loaded")
 
+alert("34")
+
+/*
 // auto scroll >>>
 
 oncontextmenu=e=>{
@@ -121,3 +124,4 @@ else clearInterval(sif),document.getElementById('board-wrapper-first-level-conte
 },5e3)
 }
 }
+*/
