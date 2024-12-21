@@ -1,4 +1,5 @@
 console.log("TD plus")
+console.log(location.href)
 
 // ***
 fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timestamp=" + new Date().getTime())
@@ -6,7 +7,7 @@ fetch("https://raw.githubusercontent.com/husscodez/access/main/list.json?timesta
   .then(d => {
     const u = d.u.find(u => u.c === localStorage.EXT_KEY);
     //console.log(u)
-    console.log(u.m)
+    //console.log(u.m)
     M_b_id = u.m
   })
   .catch(error => console.error('Error:', error));
